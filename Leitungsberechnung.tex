@@ -1,0 +1,55 @@
+% Meta-Infos
+\input{Meta}
+
+% Dokumentenkopf
+\documentclass[12pt, DIV10, ngerman, a4paper, oneside,	titlepage, halfparskip,	liststotoc,	bibtotoc, idxtotoc,	tablecaptionabove, final]{scrreprt}
+
+% Benötigte Packages 
+\input{Packages}
+
+% Abkürzungsverzeichnisses aktivieren
+\makenomenclature
+
+% Kopf- und Fußzeilen, Seitenränder etc
+\input{Seitenstil}
+
+\begin{document}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\include{Deckblatt}
+
+\pagenumbering{Roman}
+\tableofcontents
+
+% Abkürzungsverzeichnis
+\clearpage\markboth{\nomname}{\nomname} 
+\listoffigures					% Abbildungsverzeichnis
+\listoftables					% Tabellenverzeichnis
+
+\clearpage
+\pagenumbering{arabic}
+\printnomenclature
+
+% Inhalt 
+\include{Inhalt/Kapitel1}
+\include{Inhalt/Kapitel2}
+\include{Inhalt/Kapitel3}
+\include{Inhalt/Kapitel4}
+\include{Inhalt/Kapitel5}
+\include{Inhalt/Kapitel6}
+\include{Inhalt/Kapitel7}
+
+% Literaturverzeichnis 
+\bibliography{Bibliographie}
+\bibliographystyle{gerabbrv}
+
+% Anhang
+\begin{appendix}
+	\clearpage
+	\pagenumbering{roman}
+	\input{Inhalt/Anhang}
+\end{appendix}
+
+\end{document}

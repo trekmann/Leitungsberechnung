@@ -1,0 +1,29 @@
+% Zeilenabstand
+\onehalfspacing
+
+% Seitenr‰nder
+\geometry{paper=a4paper,left=20mm,right=20mm,top=20mm}
+
+% Kopf- und Fuﬂzeilen
+\pagestyle{scrheadings}
+
+% Kopf- und Fuﬂzeile auch auf Kapitelanfangsseiten
+\renewcommand*{\chapterpagestyle}{scrheadings}
+
+% Schriftform der Kopfzeile
+\renewcommand{\headfont}{\normalfont}
+
+% Kopfzeile
+\ihead{\large{\textsc{\titel}}\\	 \small{\copyright \autor }}
+\chead{}
+\setlength{\headheight}{20mm}
+\setheadwidth[0pt]{textwithmarginpar}
+\setheadsepline[text]{0.4pt}
+
+% Fuﬂzeile
+\ifoot{}
+\cfoot{\pagemark}
+\ofoot{}
+
+% Fuﬂnoten fortlaufend durchnummerieren
+\counterwithout{footnote}{chapter}

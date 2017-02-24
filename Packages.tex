@@ -1,0 +1,72 @@
+% Anpassung des Seitenlayouts
+\usepackage[
+	automark,
+	headsepline,
+	ilines
+]{scrpage2}
+
+
+% Anpassung an Landessprache
+\usepackage{babel}
+
+
+% Umlaute
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{eurosym}
+
+% Grafiken
+\usepackage[dvips,final]{graphicx}
+\graphicspath{{Bilder/}} 
+
+\usepackage{amsmath,amsfonts}
+\usepackage{units}
+
+\usepackage{makeidx}
+
+\usepackage{setspace}
+\usepackage{geometry}
+
+% Symbolverzeichnis
+\usepackage[intoc]{nomencl}
+  \let\abbrev\nomenclature
+  \renewcommand{\nomname}{Abkürzungsverzeichnis}
+  \setlength{\nomlabelwidth}{.25\hsize}
+  \renewcommand{\nomlabel}[1]{#1 \dotfill}
+  \setlength{\nomitemsep}{-\parsep}
+
+% PDF-Optionen
+\usepackage[
+bookmarks,
+bookmarksopen=true,
+pdftitle={\titel},
+pdfauthor={\autor},
+pdfcreator={\autor},
+pdfsubject={\titel},
+pdfkeywords={\titel},
+colorlinks=true,
+linkcolor=black,
+anchorcolor=black,
+citecolor=blue,
+filecolor=magenta,
+menucolor=red,
+urlcolor=cyan, 
+backref,
+plainpages=false,
+pdfpagelabels,
+hypertexnames=false,
+]{hyperref}
+
+\usepackage{chngcntr}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{lscape}
+\usepackage{tabularx}
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
+\usepackage{paralist}
+\usepackage{color}
+
