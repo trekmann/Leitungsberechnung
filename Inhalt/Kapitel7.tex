@@ -1,0 +1,169 @@
+\chapter{Komplettbeispiele zur Leitungsberechnung}
+\label{cha:Kapitel6}
+
+\section{Beispiel für eine Motorzuleitung}
+
+Die Zuleitung zum Motor wird in der Industrie verlegt und wird direkt angeschlossen. Der Überstromschutz wird von einem Motorschutz übernommen. Die Zuleitung wird auf der Wand in Elektroinstallationsrohr verlegt und parallel liegen zwei weitere voll belastete Zuleitungen für andere Motoren in diesem Rohr. Die Leitungen sind gebündelt verlegt, wie es bei der Verlegung in Elektroinstallationsrohren üblich ist. Der Widerstand der Leiterschleife an der Anschlusselle wurde mit $ R = 0,4\,\Omega $ ermittelt. Die Länge der verlegten Leitung beträgt 25 m.
+
+\begin{list}{}{}
+\item $ I_{Ein} = 5 \cdot I_{B} $
+\item $ \cos\varphi = 0,82 $
+\item $ U = 400\,\text{V}$
+\item $ P_{AB} = 2,1\,\text{kW} $ 
+\item $ t_{Ein} = 5\,\text{s} $ 
+\item $ \eta = 0,9 $
+\end{list}
+
+\subsection{Auswahl der Sicherung}
+
+\[ I_{B} = \frac{P_{AB}}{\eta\cdot\cos\varphi\cdot U \cdot \sqrt{3}} = \frac{2,1\,\text{kW}}{0,9 \cdot 0,82 \cdot 400\,\text{V} \cdot\sqrt{3}} = 4,2\,\text{A} \]
+
+\[ I_{EIN} = 5 \cdot I_{B} = 5 \cdot 4,2\,\text{A} = 21\,\text{A} \]
+
+Mit den Werten $ I_{EIN} = 21\,\text{A} $ und $ t_{Ein} = 5\,\text{s} $  wird nach der Methode in Kapitel \ref{cha:Kapitel1} eine Schmelzsicherung gewählt. Die gewählte Schmelzsicherung ist hier: gL-gG 10 A.
+
+\subsection{Überstromschutz}
+
+Der Überstromschutz wird von einem Motorschutzschalter übernommen. Dieser verhindert, dass kein Strom höher als der Betriebsstrom fließen kann. In diesem Fall entspricht der Betriebsstrom also dem Nennstromaufnahme des vorgeschalteten Überstromschutzvorrichtung. 
+Aus dem Text erkennt man, dass hier eine Häufung mit drei Leitungen vorliegt.
+
+\begin{list}{}{}
+\item $ I_{Nennstrom} = 4,2\,\text{A} $
+\item $ f(H)=0,7 $
+\item $ f(T)=1,0 $ 
+\end{list}
+
+\[ I_{Z.MIN}=\frac{I_{Nennstrom}}{f(H) \cdot f(T)} = \frac{4,2\,\text{A}}{0,7 \cdot 1,0} = 6\,\text{A} \]
+
+Aus der Beschreibung wissen wir, dass es sich um einen Drehstromverbraucher handelt und die Leitung in Rohr verlegt wird. Daraus ergibt sich, dass wir in Tabelle \ref{fig:Strombelastbarkeit} bei Verlegeart C $ \rightarrow $ 3 belastete Adern unseren Querschnitt auswählen müssen. Wenn wir die Tabelle begutachten, so sehen wir einen Wert von $ I_{Z.Leitung} = 15\,\text{A} $ bei einem Querschnitt von $ 1,5 \,\text{mm}^{2} $. Überprüfen wir nun die Bedingung nach VDE:
+
+\[ I_{B}\leq I_{N.Sicherung}\leq I_{Z.Leitung}\Longrightarrow I_{Z.MIN}\leq I_{Z.Leitung} \]
+
+\[ 4,2\,\text{A}\leq 4,2\,\text{A}\leq 15\,\text{A} \Longrightarrow 6\,\text{A}\leq 15\,\text{A} \]
+
+Diese Bedingung ist erfüllt mit einem Querschnitt von $ 1,5 \,\text{mm}^{2} $.\\
+Nach Kapitel \ref{cha:Zweite Bedingung nach VDE 0100 Teil 430} brauchen wir die 2. Bedingung nach VDE nicht zu prüfen.
+\newline
+\linebreak
+{\color{red} \textbf{Ermittelter Querschnitt $ 1,5 \,\text{mm}^{2} $.}}
+
+\subsection{Kurzschlussschutz}
+
+Als Widerstand der Leiterschleife, bis zum Anschlusspunkt der Leitung, wurde $ R = 0,4\,\Omega $ gemessen. Als Leitung soll eine NYM-J 4 x 1,5 $ \,\text{mm}^{2} $ verlegt werden über die Länge von 25 m.
+
+\begin{list}{}{}
+\item Für den Widerstand der Leitung gilt:
+\[ R_{Leitung} = \frac{2 \cdot L}{K \cdot A} \cdot \left( 1 + \alpha \cdot \Delta T \right) \]
+\[  = \frac{2 \cdot 25 \,\text{m}}{56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot\,\Omega} \cdot 1,5 \,\text{mm}^{2}} \cdot \left( 1 + 3,9\cdot 10^{-3}\frac{1}{\text{K}} \cdot 60\,\text{K} \right) = 0,74\,\Omega \]
+\item Daraus folgt für den Gesamtwiderstand:
+\[ R_{Ges} = R + R_{Leitung} = 0,4\,\Omega + 0,74\,\Omega = 1,14\,\Omega \]
+\item Der Kurzschlussstrom beträgt:
+\[ I_{K} = \frac{U_{0}}{R_{Ges}} = \frac{230\,\text{V}}{1,14\,\Omega} = 202\,\text{A} \]
+\item Nun kann die Zulässige Abschaltzeit  $ t_{VA} $ ermittelt werden:
+\[ t_{VA}=\left( \frac{k \cdot A}{I_{K}} \right)^{2} = \left( \frac{ 115 \frac{\text{A} \cdot \text{s}}{\text{mm}^{2}} \cdot 1,5 \,\text{mm}^{2}}{202 \,\text{A}} \right)^{2} = 0,73\,\text{s} \]
+\end{list}
+
+Mit dem Kurzschlussstrom $ I_{K} = 202\,\text{A} $ und der Schmelzsicherung 10 A gL-gG wurde die Abschaltzeit, mit $ t_{A} = 0,004\,\text{s} $ ermittelt. Da es sich hierbei um einen Drehstromverbraucher und einen Endstromkreis von 10 A handelt, können wir aus Tabelle \ref{tab:Abschaltzeiten} die erlaube Abschaltzeit ablesen. Da es zwei Werte gibt, wird der kleinere benutzt. Wird der kleine Wert eingehalten, wird der größere automatisch mit eingehalten. Somit ist $ t = 1\,\text{s} $.\\
+Nun überprüfen wir die beiden Bedingungen nach VDE 0100 Teil 430:
+
+\begin{enumerate}
+\item Bedingung
+\[ t_{A} \leq t_{VA} \Rightarrow 0,004\,\text{s} \leq 0,73\,\text{s} \]
+\item Bedingung
+\[ t_{A} \leq t \Rightarrow 0,004\,\text{s} \leq 1\,\text{s}\]
+\end{enumerate}
+
+{\color{red} \textbf{Ermittelter Querschnitt $ 1,5 \,\text{mm}^{2} $.}}
+
+\subsection{Spannungsfall}
+
+\[ \Delta u = \frac{\sqrt{3} \cdot 100 \cdot I \cdot L \cdot \cos\varphi}{K \cdot A \cdot U} \]
+\[ = \frac{\sqrt{3} \cdot 100 \cdot 4,2\,\text{A} \cdot 25\,\text{m} \cdot 0,82}{56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot\,\Omega} \cdot 1,5 \,\text{mm}^{2} \cdot 400\,\text{V}} = 0,44\,\% \]
+
+Die erlaubten Grenzwerte werden eingehalten.
+\newline
+\linebreak
+{\color{red} \textbf{Ermittelter Querschnitt $ 1,5 \,\text{mm}^{2} $.}}
+\subsection{Abschlussbetrachtung}
+
+Alle Ermittlungen haben einen Querschnitt von $ 1,5 \,\text{mm}^{2} $ verifiziert. Daher entscheiden wir uns, eine Leitung NYM-J 4 x 1,5 $ \,\text{mm}^{2} $ zu verlegen.
+
+\section{Beispiel für die Zuleitung zu einem Herd}
+
+Es wird die Zuleitung zu einem Herd verlegt. Dieser Herd befindet sich in einem Privathaushalt. Parallel zu der Leitung des Herdes liegt die Zuleitung für die Geschirrspülmaschine sowie die Zuleitung für die Arbeitsteckdosen in der Küche. Alle drei Leitungen werden Unterputz verlegt. Die dauerhafte Verlegetemperatur liegt bei 25°C. Nach DIN 18015 Teil 1 muss die Herdzuleitung auf eine Nennbelastbarkeit von 20 A ausgelegt werden. Die Länge der Zuleitung beträgt 21 m. Der Widerstand an der Anschlussstelle der Unterverteilung beträgt $ R = 0,8\,\Omega $ im TN-Netz. Die Leistung des Herdes ist mit $ P = 11\,\text{kW} $ angegeben. 
+
+\subsection{Auswahl der Sicherung}
+
+\[ I_{B} = \frac{P_{ZU}}{\sqrt{3} \cdot 400\,\text{V}} = \frac{11\,\text{kW}}{\sqrt{3} \cdot 400\,\text{V}} = 15,9\,\text{A} \]
+
+Für den Herd wird eine B 16 A Sicherung gewählt. Da bei einem solchem Verbraucher keine hohen Einschaltströme zu erwarten sind.
+
+\subsection{Überstromschutz}
+
+Für den Überstromschutz ist die gewählte B 16 A Sicherung zuständig. Da aber die Forderung für eine Belastbarkeit von 20 A besteht, muss diese Leitung auf diesen Strom ausgelegt sein. Es kann nun in der Geschirrspülmaschine Geschirr gespült werden, Belastung der Leitung 30 \% - 40 \%. Gleichzeitig wird mittels eines Wasserkochers Wasser erhitzt um es beim Kochen zu benutzen oder Tee auf zu brühen, Belastung der Leitung 50 \% - 60 \%. Zusätzlich wird auf dem Herd das Mittagessen zubereitet, Belastung der Leitung auch gute 50 \%. Hier bei kommen wir auf eine Häufung von 2 zusätzlichen Leitungen.
+
+\begin{list}{}{}
+\item $ I_{Nennstrom} = 20\,\text{A} $
+\item $ f(H)=0,7 $
+\item $ f(T)=1,06 $ 
+\end{list}
+
+\[ I_{Z.MIN}=\frac{I_{Nennstrom}}{f(H) \cdot f(T)} = \frac{20\,\text{A}}{0,7 \cdot 1,06} = 27\,\text{A} \]
+
+Die Zuleitung zum Herd muss also eine Mindestbelastbarkeit von 27 A aufweisen.
+
+Wie wir bereits wissen muss $ I_{Z.Leitung} $ mindestens so groß sein, oder größer sein als $ I_{Z.MIN} $. 
+Die genannte Unterputzverlegung entspricht Verlegeart C. Des Weiteren handelt es sich bei einem Herd um einen Drehstromverbraucher, also werden 3 Adern belastet. Daher wird bei C $ \rightarrow $ 3 belasteten Adern, der notwendige Strom ermittelt. Wenn wir die Tabelle begutachten, sehen wir einen Wert von $ I_{Z.Leitung} = 32\,\text{A} $ bei einem Querschnitt von $ 4 \,\text{mm}^{2} $. Überprüfen wir nun die Bedingung nach VDE:
+
+\[ I_{B}\leq I_{N.Sicherung}\leq I_{Z.Leitung}\Longrightarrow I_{Z.MIN}\leq I_{Z.Leitung} \]
+
+\[ 15,6\,\text{A}\leq 16\,\text{A}\leq 32\,\text{A} \Longrightarrow 27\,\text{A}\leq 32\,\text{A} \]
+
+Diese Bedingung ist erfüllt mit einem Querschnitt von $ 4 \,\text{mm}^{2} $.\\
+Nach Kapitel \ref{cha:Zweite Bedingung nach VDE 0100 Teil 430} brauchen wir die 2. Bedingung nach VDE nicht zu prüfen.
+\newline
+\linebreak
+{\color{red} \textbf{Ermittelter Querschnitt $ 4 \,\text{mm}^{2} $.}}
+
+\subsection{Kurzschlussschutz}
+
+Als Widerstand der Leiterschleife, bis zum Anschlusspunkt der Leitung, wurde $ R = 0,8\,\Omega $ gemessen. Als Leitung soll eine NYM-J 5 x 4 $ \,\text{mm}^{2} $ verlegt werden über die Länge von 21 m.
+
+\begin{list}{}{}
+\item Für den Widerstand der Leitung gilt:
+\[ R_{Leitung} = \frac{2 \cdot L}{K \cdot A} \cdot \left( 1 + \alpha \cdot \Delta T \right) \]
+\[  = \frac{2 \cdot 21 \,\text{m}}{56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot\,\Omega}} \cdot \left( 1 + 3,9\cdot 10^{-3}\frac{1}{\text{K}} \cdot 60\,\text{K} \right) = 0,23\,\Omega \]
+\item Daraus folgt für den Gesamtwiderstand:
+\[ R_{Ges} = R + R_{Leitung} = 0,8\,\Omega + 0,23\,\Omega = 1,03\,\Omega \]
+\item Der Kurzschlussstrom beträgt:
+\[ I_{K} = \frac{U_{0}}{R_{Ges}} = \frac{230\,\text{V}}{1,03\,\Omega} = 223\,\text{A} \]
+\item Nun kann die Zulässige Abschaltzeit  $ t_{VA} $ ermittelt werden:
+\[ t_{VA}=\left( \frac{k \cdot A}{I_{K}} \right)^{2} = \left( \frac{ 115 \frac{\text{A} \cdot \text{s}}{\text{mm}^{2}} \cdot 4 \,\text{mm}^{2}}{223\,\text{A}} \right)^{2} = 4,3\,\text{s} \]
+\end{list}
+
+Mit dem Kurzschlussstrom $ I_{K} = 223\,\text{A} $ und dem Leitungsschutzschalter B 10 A wurde die Abschaltzeit, mit $ t_{A} = 0,01\,\text{s} $ ermittelt. Da es sich hierbei um einen Drehstromverbraucher und einen Endstromkreis von 16 A handelt, können wir aus Tabelle \ref{tab:Abschaltzeiten} die erlaube Abschaltzeit ablesen. Da es zwei Werte gibt, wird der kleinere benutzt. Wird der kleine Wert eingehalten, wird der größere automatisch mit eingehalten. Somit ist $ t = 0,2\,\text{s} $.\\
+Nun überprüfen wir die beiden Bedingungen nach VDE 0100 Teil 430:
+
+\begin{enumerate}
+\item Bedingung
+\[ t_{A} \leq t_{VA} \Rightarrow 0,01\,\text{s} \leq 4,3\,\text{s} \]
+\item Bedingung
+\[ t_{A} \leq t \Rightarrow 0,01\,\text{s} \leq 0,2\,\text{s}\]
+\end{enumerate}
+
+{\color{red} \textbf{Ermittelter Querschnitt $ 4 \,\text{mm}^{2} $.}}
+
+\subsection{Spannungsfall}
+
+Hierbei ist zu beachten, dass die Leitung auf eine Belastbarkeit von 20A aufzulegen ist. Des-wegen muss hier mit den angegebenen 20A gerechnet werden!
+
+\[ \Delta u = \frac{\sqrt{3} \cdot 100 \cdot I \cdot L \cdot \cos\varphi}{K \cdot A \cdot U} \]
+\[ = \frac{\sqrt{3} \cdot 100 \cdot 20\,\text{A} \cdot 21\,\text{m} \cdot 1}{56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot\,\Omega} \cdot 4 \,\text{mm}^{2} \cdot 400\,\text{V}} = 0,81\,\% \]
+
+Die erlaubten Grenzwerte werden eingehalten.
+\newline
+\linebreak
+{\color{red} \textbf{Ermittelter Querschnitt $ 4 \,\text{mm}^{2} $.}}
+\subsection{Abschlussbetrachtung}
+
+Alle Ermittlungen haben einen Querschnitt von $ 4 \,\text{mm}^{2} $ verifiziert. Daher entscheiden wir uns, eine Leitung NYM-J 5 x 4 $ \,\text{mm}^{2} $ zu verlegen.

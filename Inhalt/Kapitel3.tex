@@ -1,0 +1,152 @@
+\chapter{Auswahl der Sicherung}
+\label{cha:Kapitel2}
+
+Für die Auswahl der Sicherung ist es wichtig, die technischen Daten des Gerätes zu kennen, um somit die Betriebsstromaufnahme des Gerätes zu ermitteln. Im Folgenden wird hier auf zwei wichtige Auswahlmethoden eingegangen:
+
+\begin{enumerate}
+\item Auswahl der Sicherung bei normalen Verbrauchern beispielsweise der Waschmaschine
+\item Auswahl der Sicherung in Motorstromkreisen
+\end{enumerate}
+
+\section{Ermittlung des Betriebsstroms des Gerätes}
+
+\begin{equation}
+I_{B} = \frac{P_{AB}}{\eta\cdot\cos\varphi\cdot U \cdot X}
+\label{eq:Betriebsstrom}
+\end{equation}
+
+\begin{list}{}{Bedeutung der einzelnen Elemente:}
+\item $ I_{B} $ = Betriebsstrom des Gerätes
+\item $ \cos\varphi $ = Leistungsfaktor des Gerätes
+\item $ X = \sqrt{3} $ bei einem Drehstromverbraucher und 1 bei einem Wechselstromverbraucher
+\item $ \eta $ = Wirkungsgrade des Gerätes
+\item $ P_{AB} $ = Abgegebene Leistung des Gerätes. Wird die aufgenommene Leistung verwendet, ist $ \eta = 1$.
+\end{list}
+
+Mit der Formel \ref{eq:Betriebsstrom} kann der Betriebsstrom eines Wechselstromes oder Drehstromverbrauchers ermittelt werden.
+
+\subsection{Beispiel für die Ermittlung des Betriebsstroms}
+
+In den folgenden Beispielen werden die beiden oben erwähnten Fälle behandelt.
+
+\subsubsection{Beispiel für einen Drehstromasynchronmotor}
+
+\begin{list}{}{Es wird für die Ermittlung ein Drehstromasynchronmotor mit folgenden technischen Daten gewählt:}
+\item $ \cos\varphi = 0,82 $
+\item $ U = 400\,\text{V} $ 
+\item $ \eta = 0,9 $
+\item $ P_{AB} = 4,8\,\text{kW} $
+\end{list}
+
+\[ I_{B} = \frac{P_{AB}}{\eta\cdot\cos\varphi\cdot U \cdot X} = \frac{4,8\,\text{kW}}{0,9 \cdot 0,82 \cdot 400\,\text{V} \cdot\sqrt{3}} = 9,4\,\text{A} \]
+
+Dieser Motor hat also eine Stromaufnahme von $ 9,4\,\text{A} $. Dieser Wert kann jetzt verarbeitet werden.
+
+\subsubsection{Beispiel für einen normalen Verbraucher}
+
+\begin{list}{}{Für die Ermittlung der Stromaufnahme werden die technischen Daten des Gerätes ermittelt:}
+\item $ \cos\varphi = 0,95 $
+\item $ U = 230\,\text{V} $ 
+\item $ P_{AUF} = 2,5\,\text{kW} $
+\end{list}
+
+Da hier die aufgenommene Leistung des Gerätes angegeben ist, kann der Wirkungsgrad in der Berechnung entfallen.
+
+\[ I_{B} = \frac{P_{AUF}}{\cos\varphi\cdot U \cdot X} = \frac{2,5\,\text{kW}}{0,95 \cdot 230\,\text{V}} = 11,44\,\text{A} \]
+
+Dieses Gerät hat also eine Stromaufnahme von $ 11,44\,\text{A} $. Dieser Wert kann jetzt verarbeitet werden.
+
+\section{Auswahl der Sicherung}
+
+Die Sicherung wird unter idealen Bedingungen gewählt. Für die Auswahl der Sicherung ist es wichtig, die Stromaufnahme des jeweiligen Gerätes zu kennen.
+\newline
+\linebreak
+Hierbei ist folgende Bedingung einzuhalten:
+\begin{equation}
+I_{B}\leq I_{N.Sicherung}
+\label{eq:Auswahl Sicherung}
+\end{equation}
+
+Der Betriebsstrom des Gerätes muss niedriger sein als der Nennstrom der Sicherung. Bei den Beispielen wird davon ausgegangen, dass diese Bedingung immer erfüllt ist. Weiterhin ist die Kenntnis des Einschaltstromes, des ohmschen Verbrauchers oder des Motors wichtig. Jedes Gerät hat in seinem Einschaltmoment einen höheren Strom als im Betrieb des Gerätes. Der Einschaltstrom muss nun von der gewählten Sicherung gehalten werden, bis dieser Strom wieder abgeklungen ist. Da die Geräte verschiedene Einschaltströme haben können, kann hier keine generelle Aussage getroffen werden. Die jeweiligen Einschaltströme der Geräte müssen für eine weitere erfolgreiche Ermittlung der Sicherung bekannt sein, so wie die Zeit, in der der Einschaltstrom zum Fließen kommt. Es wird folgende Vorgehensweise empfohlen:
+
+\begin{enumerate}
+\item Ermittlung des Einschaltstromes
+\item Ermittlung der Zeit, in der der Einschaltstrom fließt
+\item Vergleich der Werte mit denen der Sicherungen und Auswahl der passenden Sicherung
+\end{enumerate}
+
+Wird in einem Endstromkreis eine Steckvorrichtung angebracht, die der Versorgung verschiedenster Geräte dienen kann, sollte die Sicherung passend auf den Nennstrom der Steckvorrichtung ausgelegt werden.
+\newline
+\linebreak
+In einem Privathaushalt sollte die Sicherung immer auf den Nennstrom der Steckvorrichtung ausgelegt werden, da hier verschiedenste Geräte betrieben werden können. Der Errichter kann hier \textbf{nicht} von dem Betrieb mit einem festen Gerät ausgehen.
+\newline
+\linebreak
+In der Industrie sieht es anders aus. Hier kann auch bei Steckvorrichtungen von dem Betrieb mit bestimmten Geräten ausgegangen werden. Hierbei kann aber keine generelle Aussage getroffen werden, es erfordert eine persönliche Begutachtung und Einschätzung der Sachlage vor Ort. 
+
+\subsection{Beispiel für ein Stromkreis mit ohmschen Verbrauchern, Glühlampen}
+
+Es werden an einen Stromkreis Glühlampen mit einer Gesamtleitung von $ P = 1035\,\text{W} $ und einem Betriebsstrom von $ I_{B} = 4,5\,\text{A} $ angeschlossen. Die Glühlampen haben als Faustregel ca. den 6-fachen Einschaltstrom.
+
+\begin{list}{}
+\item $ I_{B} = 4,5\,\text{A} $
+\item $ I_{EIN} = 4,5\,\text{A} \cdot 6 = 27\,\text{A} $
+\end{list}
+
+Der Einschaltstrom liegt hier bei $ t < 1\,\text{s} $. Die Abschaltzeit des Leitungsschutzschalters bei nicht Erreichen des Kurzschlussstromes ist auf jeden Fall $ t > 1\,\text{s} $. Nun werden diese Daten mit den entsprechenden technischen Daten der Leitungsschutzschalter verglichen.
+
+\begin{table}[h]
+\caption{Ansprechen der Leitungsschutzschalter}
+\label{tab:Ansprechen der Leitungsschutzschalter}
+\centering
+\begin{tabular}{||c||c||}
+\hline Sicherung & Ansprechen des Kurzschlussschutzauslösers \\ 
+\hline\hline LSS TYP B 6 A & 18 A \\ 
+\hline LSS TYP B 10 A &  30 A \\ 
+\hline LSS TYP B 16 A & 48 A \\ 
+\hline 
+\end{tabular}
+\end{table}
+
+In Tabelle \ref{tab:Ansprechen der Leitungsschutzschalter} sind die drei möglichen Kandidaten als Sicherung für diesen Stromkreis aufgeführt. Die Leitungsschutzschalter der Kategorie B wurden gewählt, da in Einfamilienhäusern als Standardabsicherung Leitungsschutzschalter der Kategorie B verwendet werden. Ein Vergleich des Einschaltstromes der Glühlampen und dem Ansprechen des Kurzschlussschutzauslösers zeigt, dass es nicht möglich ist, eine B 6 A Sicherung zu verwenden. Diese kann den Betriebsstrom zwar halten, jedoch nicht den Einschaltstrom der Verbraucher. Der Leitungsschutzschalter des Typ B 10 A liegt nur minimal über dem Einschaltstrom der Glühlampen. Er wird in den meisten Einschaltmomenten den Strom halten können, jedoch gibt es auch hier Schwankungen in der Qualität und somit im Ansprechen des Kurzschlussschutzauslösers. Bei den Glühlampen kann es durch Qualitätsschwankungen, Temperaturschwankungen und andere Einflüsse, auch zu Schwankungen des Einschaltstromes kommen. Daher kann es passieren, dass die Sicherung in bestimmten Situationen auslöst und somit das Ziel der Sicherungsdimensionierung verfehlt würde. Daher ist als einziger Leitungsschutzschalter bedenkenlos der LSS Typ B 16 A zu empfehlen.
+
+\subsection{Beispiel für einen Stromkreis mit einem Motor}
+
+Es existieren verschiedenste Lösungsmöglichkeiten für den Schutz eines Motorstromkreises. Auf eine dieser Varianten wird sich festgelegt und im weiteren Verlauf des Dokuments wird nur diese Variante betrachtet und alle anderen werden außen Acht gelassen. Um die Leitung gegen Überstrom zu schützen, wird ein Motorschutz verwendet. Auf die Auswahl dieses Motorschutzes wird hierbei verzichtet, da es passend für die jeweilige Situation vor Ort ausgewählt werden muss. Der Kurzschlussschutz der Leitung wird von einer gL-gG-Schmelzsicherung übernommen. Diese Sicherung muss den Anlaufstrom des Motors halten können.
+
+\begin{list}{}{Technische Daten des Motors:}
+\item $ \cos\varphi = 0,82 $
+\item $ U = 400\,\text{V} $ 
+\item $ \eta = 0,9 $
+\item $ P_{AB} = 2,1\,\text{kW} $
+\item $ I_{EIN} = 5 \cdot I_{B} $
+\item $ t_{EIN} = 5\,\text{s} $
+\end{list}
+
+\[ I_{B} = \frac{P_{AB}}{\eta\cdot\cos\varphi\cdot U \cdot \sqrt{3}} = \frac{2,1\,\text{kW}}{0,9 \cdot 0,82 \cdot 400\,\text{V} \cdot \sqrt{3} } = 4,2\,\text{A} \]
+
+\[ I_{EIN} = 5 \cdot I_{B} = 5 \cdot 4,2\,\text{A} = 21\,\text{A} \]
+
+Mit den Werten $ I_{EIN} = 21\,\text{A} $ und $ t_{EIN} = 5\,\text{s} $ wird nach der Methode des vorherigen Kapitels eine Schmelzsicherung gewählt. Die gewählte Schmelzsicherung ist hier gL-gG 10 A.
+
+\section{Selektivität bei der Auswahl von Sicherungen}
+\label{cha:Selektivität bei der Auswahl von Sicherungen}
+
+Das Bild \ref{fig:Selektivitaet_Schmelzsicherungen} zeigt die Selektivität unter den Schmelzsicherungen, welche in Kapitel \ref{cha:Grundlagen Schmelzsicherungen} erläutert wurden. Zunächst stellt man sich die grundlegende Frage, was ist denn überhaupt \textsc{Selektivität}?
+
+Grundsätzlich muss natürlich die Sicherung auslösen, welche unmittelbar vor dem Fehler existiert. Hat beispielsweise der Herd einen Fehler und erzeugt einen Kurzschluss, so muss die Sicherung für den Herd auslösen und keine Sicherung im Hausanschlusskasten. Wird ein Loch in die Zuleitung zu einer Wohnung im Mehrfamilienhaus gebohrt, soll nur die Sicherung für diese Wohnung auslösen. Hier ist es unter allen Umständen zu vermeiden, dass die Hauptsicherung auslöst und somit alle Wohnungen im Dunkeln stehen. Es heißt, dass die Sicherungen selektiv zueinander sein müssen. 
+
+Es sind Grundlegend zwei Fälle zu unterscheiden. 
+
+\begin{enumerate}
+\item \textbf{Schmelzsicherung - Schmelzsicherung:} \\ Dieser Fall beschreibt eine Schmelzsicherung, welche hinter eine Schmelzsicherung eingebaut ist. Diese Fall zeigt sich bei einem Mehrfamilienhaus für die Absicherung der einzelnen Wohnungen. Für diesen Fall ist das Bild \ref{fig:Selektivitaet_Schmelzsicherungen} zu sehen. Man liest das Bild, indem man sich zuerst die Sicherung an der linken Seite heraus sucht, welche als erstes verbaut ist. Hier als Beispiel eine 63 A Sicherung. Der Punkt markiert nun jene Sicherungen, welche noch sicher verbaut werden können, so dass jeweils die dem Fehler am nächsten gelegene Sicherung auslöst. Dies ist in diesen Fall eine 35 A Sicherung. Es dürfte in diesem Fall also Maximal eine 35 A Absicherung für eine Wohneinheit vorgesehen werden.
+\item \textbf{Schmelzsicherung - Leitungsschutzschalter:} \\ Hier gilt es eine einfache Faustregel zu beachten. Generell sollte der Leitungsschutzschalter eine Nennstromgröße kleiner sein, als die vorgeschaltete Sicherung. Im Fall einer 35 A Schmelzsicherung ist der größte erlaubt Leitungsschutzschalter ein 25 A LSS.
+\end{enumerate}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{../Bilder/UnterlagenHager/Selektivitaet_001i_D}
+\caption{Selektivität bei Schmelzsicherungen (von \cite{hager2012})}
+\label{fig:Selektivitaet_Schmelzsicherungen}
+\end{figure}
+
+

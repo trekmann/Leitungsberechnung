@@ -1,0 +1,222 @@
+\chapter{Kurzschlussschutz von Kabel und Leitungen}
+\label{cha:Kapitel4}
+
+Bei jedem Verbraucher kann es zu einer Verbindung eines Außenleiters, mit dem Schutzleiter kommen. Bei dieser Verbindung kommt es zu einem hohen Stromfluss und durch diesen können die Leitungen geschädigt werden. Auf die vielen Arten des Kurzschlusses wird hier nicht weiter eingegangen, da es den Umfang des Dokuments sprengen würde. Der Kurzschlussschutz von Kabel und Leitungen sollte nun in der folgenden Reihenfolge ermittelt werden:
+
+\begin{enumerate}
+\item Zulässige Abschaltzeit ermitteln
+\item Widerstand der Leiterschleife und den Kurzschlussstrom ermitteln
+\item Abschaltzeit der Sicherung und die vorgeschriebene Abschaltzeit nach VDE 0100 Teil 410 ermitteln
+\item Bedingungen nach VDE 0100 Teil 430 prüfen
+\end{enumerate}
+
+\section{Zulässige Abschaltzeit nach VDE 0100 Teil 430}
+
+Die Zulässige Abschaltzeit wird nach VDE 0100 Teil 430 nach Formel \ref{eq:Zulässige Abschaltzeit} ermittelt.
+
+\begin{equation}
+t_{VA}=\left( \frac{k \cdot A}{I_{K}} \right)^{2}
+\label{eq:Zulässige Abschaltzeit}
+\end{equation}
+
+\begin{list}{}{}
+\item $ t_{VA} $ = Zulässige Abschaltzeit nach VDE 0100 Teil 430
+\item $ A $ = Querschnitt der zu berechnenden Leitung
+\item $ I_{K} $ = Kurzschlussstrom auf der Leitung
+\end{list}
+
+Der k Wert ($ k = 1 \cdot \frac{\text{A} \cdot \sqrt{\text{s}}}{\text{mm}^{2}} $) ist der Materialkoeffizient. Die gängigsten sind in Tabelle \ref{fig:k Koeffizient} dokumentiert. Auf die  Einheit von k wird, aus Übersichtlichkeit, in der Tabelle \ref{fig:k Koeffizient} verzichtet.
+
+\begin{table}[h]
+\caption{k Koeffizient}
+\label{fig:k Koeffizient}
+\centering
+\begin{tabular}{||c||c||}
+\hline Art der Leitung/Kabel & Koeffizient $ k $ \\ 
+\hline \hline PVC isolierten Kupferleiter & 115 \\ 
+\hline PVC isolierten Aluminiumleitern & 76 \\ 
+\hline Gummiisolierten Kupferleitern & 141 \\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+Die Sicherung im Stromkreis ist dafür verantwortlich den Strom, in der dafür vorgesehenen Zeit, abzuschalten. Die Zeit $ t_{VA} $ darf dabei nicht überschritten werden. 
+
+\section{Ermittlung des Widerstandes der Leiterschleife und des Kurzschlussstromes}
+
+Berühren sich der Außenleiter und der PE, so wird die Leiterschleife geschlossen und es kommt zu einem hohen Stromfluss. Folglich ist dieser Stromfluss der Kurzschlussstrom. Für die Ermittlung des Kurzschlussstromes ist die Spannung wichtig. Zwischen dem Außenleiter und dem PE liegt dabei eine Spannung von $ U_{0} = 230\,\text{V} $ an. Die anderen Arten des Kurzschlusses finden hier keine Beachtung, da dieser Kurzschluss für den Menschen am gefährlichsten ist und somit umgehend abgeschaltet werden muss.
+
+\subsection{Ermittlung des Widerstandes der Leiterschleife}
+
+Der Widerstand der Leiterschleife besteht aus zwei Komponenten:
+
+\begin{enumerate}
+\item Der Widerstand der Leiterschleife $ R $ des öffentlichen Versorgungsnetzes bis zu der Anschlussstelle der verlegten Leitung/Kabel. Hierbei gibt es nur eine verlässliche Messmethode. Es sollte ein Messgerät, welches die Prüfungen nach VDE 0100 Teil 610 erledigen kann, gewählt werden, um damit den Widerstand der Leiterschleife zu ermitteln. Berechnungen oder Schätzungen dieses Widerstandes sind zu ungenau, oder fallen in dem Kompetenzbereich eines Diplom Ingenieurs der Elektrotechnik.
+\item Hierbei muss der Widerstand der verlegten Leitung oder des verlegten Kabels ermittelt werden. Dies wird nach Formel \ref{eq:Berechnung R Leitung} erledigt.
+\end{enumerate}
+
+\begin{equation}
+R_{Leitung} = \frac{2 \cdot L}{K \cdot A} \cdot \left( 1 + \alpha \cdot \Delta T \right) 
+\label{eq:Berechnung R Leitung}
+\end{equation}
+
+\begin{list}{}{}
+\item $ L $ = Länge der Leitung
+\item $ A $ = Querschnitt der zu berechnenden Leitung
+\item $ K $ = Elektrische Leitfähigkeit der Leitung, bei Kupfer $ K = 56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot \Omega} $
+\item $ \alpha $ = Temperaturkoeffizient, bei Kupfer $ \alpha = 3,9\cdot 10^{-3}\frac{1}{\text{K}} $
+\item $ \Delta T $ = Dieser Faktor beschreibt eine Temperaturdifferenz. Diese reslutiert aus der maximal erlaubten Temperatur der Leitung ( $ T_{NYM} = 70\,\textbf{°C} $ ), der Temperatur der Elektrischen Leitfähigkeit $ K $ ( $ T_{K} = 20\,\textbf{°C} $ ) sowie einem Sicherheitsaufschlag von $ T_{Sicherheit} = 10\,\textbf{K} $. Daraus resultiert: $ \Delta T = ( T_{NYM} - T_{K} ) + T_{Sicherheit} = 60\,\text{K} $
+\end{list}
+
+Wurden nun beide Werte ermittelt, werden sie addiert um den Gesamtwiderstand der Leiterschleife heraus zu finden. Der Gesamtwiderstand wird nach Formel \ref{eq:Berechnung R} ermittelt.
+
+\begin{equation}
+R_{Ges.} = R + R_{Leitung}
+\label{eq:Berechnung R}
+\end{equation}
+
+\subsubsection{Beispiel für eine Herdzuleitung}
+\label{cha:Beispiel für eine Herdzuleitung}
+
+Als Widerstand der Leiterschleife, bis zum Anschlusspunkt der Leitung, wurde $ R = 0,8\,\Omega $ gemessen. Als Leitung soll ein NYM-J 5 x 2,5 mm\textsuperscript{2} verlegt werden, über die Länge von 21 m.
+Somit ist $ R = 0,8\,\Omega $ und $ R_{Leitung} $:
+
+\[ R_{Leitung} = \frac{2 \cdot L}{K \cdot A} \cdot \left( 1 + \alpha \cdot \Delta T \right) \]
+\[  = \frac{2 \cdot 21 \,\text{m}}{56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot \Omega} \cdot 2,5 \,\text{mm}^{2}} \cdot \left( 1 + 3,9\cdot 10^{-3}\frac{1}{\text{K}} \cdot 60 \,\text{K} \right) = 0,37\,\Omega \]
+
+Der Gesamtwiderstand errechnet sich somit zu:
+
+\[ R_{Ges} = R + R_{Leitung} = 0,8\,\Omega + 0,37\,\Omega = 1,17\,\Omega \]
+
+Somit ergibt sich für den Widerstand der Leiterschleife im Kurzschlussfall zu $ R_{GES} = 1,17\,\Omega $.
+
+\subsubsection{Beispiel für eine Motorzuleitung}
+\label{cha:Beispiel für eine Motorzuleitung}
+
+Als Widerstand der Leiterschleife, bis zum Anschlusspunkt der Leitung, wurde $ R = 0,3\,\Omega $ gemessen. Als Leitung soll ein NYM-J 4 x mm\textsuperscript{2} verlegt werden, über die Länge von 31 m.
+Somit ist $ R = 0,3\,\Omega $ und $ R_{Leitung} $:
+
+\[ R_{Leitung} = \frac{2 \cdot L}{K \cdot A} \cdot \left( 1 + \alpha \cdot \Delta T \right) \]
+\[  = \frac{2 \cdot 31 \,\text{m}}{56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot\,\Omega} \cdot 1,5 \,\text{mm}^{2}} \cdot \left( 1 + 3,9\cdot 10^{-3}\frac{1}{\text{K}} \cdot 60\,\text{K} \right) = 0,91\,\Omega \]
+
+Der Gesamtwiderstand errechnet sich somit zu:
+
+\[ R_{Ges} = R + R_{Leitung} = 0,3\,\Omega + 0,91\,\Omega = 1,21\,\Omega \]
+
+Somit ergibt sich für den Widerstand der Leiterschleife im Kurzschlussfall zu $ R_{GES} = 1,21\,\Omega $.
+
+\subsection{Ermittlung des Kurzschlussstromes, der auf der Leitung zum fließen kommt}
+
+Es gibt viele Arten des Kurzschlusses. Für diesen Kurzschluss ist lediglich der Kurzschlussstrom von Bedeutung, der zum Fließen kommt bei einer Verbindung eines Außenleiters mit dem PE. Die Spannung ist hierbei $ U_{0} = 230\,\text{V} $.\\
+Wie genau wird nun der Kurzschlussstrom $ I_{K} $ ermittelt? Lediglich mit einer einfachen Berechnung mit dem ohmschen Gesetz. Die Spannung ist bekannt mit $ U_{0} = 230\,\text{V} $ und der Widerstand wurde ebenfalls ermittelt. Somit folgt daraus Formel \ref{eq:Kurzschlussstrom}:
+
+\begin{equation}
+I_{K} = \frac{U_{0}}{R_{Ges}}
+\label{eq:Kurzschlussstrom}
+\end{equation}
+
+\subsubsection{Beispiel für die Ermittlung des Kurzschlussstromes bei einer Herdzuleitung}
+\label{cha:Beispiel für die Ermittlung des Kurzschlussstromes bei einer Herdzuleitung}
+
+Wir greifen hier auf die Daten des Kapitel \ref{cha:Beispiel für eine Herdzuleitung} zurück. Dort hatten wir bereits 
+$ R_{GES} = 1,17\,\Omega $ ermittelt. Wir setzen diesen Wert jetzt in Kapitel \ref{eq:Kurzschlussstrom} ein und ermitteln den Kurzschlussstrom $ I_{K} $.
+
+\[ I_{K} = \frac{U_{0}}{R_{Ges}} = \frac{230\,\text{V}}{1,17\,\Omega} = 197\,\text{A} \]
+
+Der Kurzschlussstrom der auf der Herdzuleitung zum Fließen kommt, beträgt $ I_{K} = 197\,\text{A} $.
+
+\subsubsection{Beispiel für die Ermittlung des Kurzschlussstromes bei einer Motorzuleitung}
+\label{cha:Beispiel für die Ermittlung des Kurzschlussstromes bei einer Motorzuleitung}
+
+Wir greifen hier auf die Daten des Kapitel \ref{cha:Beispiel für eine Motorzuleitung} zurück. Dort hatten wir bereits 
+$ R_{GES} = 1,21\,\Omega $ ermittelt. Wir setzen diesen Wert jetzt in Kapitel \ref{eq:Kurzschlussstrom} ein und ermitteln den Kurzschlussstrom $ I_{K} $.
+
+\[ I_{K} = \frac{U_{0}}{R_{Ges}} = \frac{230\,\text{V}}{1,21\,\Omega} = 190\,\text{A} \]
+
+Der Kurzschlussstrom der auf der Motorzuleitung zum Fließen kommt, beträgt $ I_{K} = 190\,\text{A} $.
+
+\section{Abschaltzeit der Sicherung, Abschaltzeit nach VDE 0100 Teil 410}
+
+Die Abschaltzeit t nach VDE 0100 Teil 410 kann in Kapitel \ref{cha:Abschaltzeiten im öffentlichen Versorgungsnetz} ermittelt werden. Um die Abschaltzeit der Sicherung zu ermitteln (welche bereits nach Kapitel \ref{cha:Kapitel2} ausgewählt wurde), ist es wichtig zu wissen welche Sicherung für den Kurzschlussschutz verwendet wird. Es gibt hierbei zwei grundlegende Möglichkeiten, auf die ich näher eingehen möchte.
+
+\subsection{Abschaltzeit eines Leitungsschutzschalters}
+
+Wie bereits in Kapitel \ref{cha:Grundlagen Leitungsschutzschalter} erwähnt, ist es wichtig zu wissen, bei welchem Strom der Leitungsschutzschalter sicher auslöst. Bei einem Leitungsschutzschalter der Kategorie B ist dies bei dem fünffachen des Nennstromes. Bei einem Leitungsschutzschalter der Kategorie C, wäre das bei dem zehnfachen des Nennstromes. \\
+Wird dieser Nennstrom nun erreicht, so löst der Leitungsschutzschalter in der Zeit $ t_{A} \leq 0,01\,\text{s} $ aus. Bei einem Leitungsschutzschalter des Typs B 16 A müssen also mindestens 80 A Kurzschlussstrom $ I_{K} $ zum Fließen kommen (siehe Tabelle \ref{tab:Abschaltzeiten der Leitungsschutzschalter-Charakteristiken}). 
+
+\subsection{Abschaltzeit einer Schmelzsicherung des Typs gLgG }
+
+Auf dem Bild \ref{fig:Zeit-Strom-Diagramm Schmelzsicherung} sind die Kennlinie der Schmelzsicherungen zu sehen. Mit Hilfe eines einfachen Beispiels wird verdeutlicht, wie wir die Abschaltzeit ermitteln. Nachfolgend wird der Kurzschlussstrom und die Sicherung definiert. Auf dieses Basis ermitteln wir die Abschaltzeit.
+
+\begin{list}{}{}
+\item Sicherung 25A gLgG 
+\item $ I_{K} = 200\,\text{A} $
+\end{list}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{../Bilder/Ermittlung}
+\caption{Ermittlung der Abschaltzeit (von \cite{hager2012})}
+\label{fig:Ermittlung der Abschaltzeit}
+\end{figure}
+
+Wir markieren nun den Kurzschlussstrom von $ I_{K} = 200\,\text{A} $ und markieren den Schnittpunkt des Stromes mit der oberen Kennlinie unserer Sicherung. Aus dem Diagramm können wir somit einen  Abschaltzeit von $ t_{A} = 0,2\,\text{s} $ ablesen.
+
+\section{Bedingungen nach VDE 0100 Teil 430}
+
+Es gibt zwei wichtige Bedingungen, die bei der Berechnung einzuhalten sind.  Die erste Bedingung besagt, dass die Abschaltzeit der Sicherung gleich oder kleiner sein muss, als die zulässige Abschaltzeit. Die zweite Bedingung besagt, dass die Abschaltzeit der Sicherung gleich oder kleiner sein muss, als die erlaubte Abschaltzeit nach  VDE 0100 Teil 410.
+
+\begin{enumerate}
+\item Bedingung
+\begin{equation}
+t_{A} \leq t_{VA}
+\label{eq:Kurzschluss Bedingung 1}
+\end{equation}
+\item Bedingung
+\begin{equation}
+t_{A} \leq t
+\label{eq:Kurzschluss Bedingung 2}
+\end{equation}
+\end{enumerate}
+
+\subsection{Beispiel für eine Herdzuleitung}
+
+Nach Kapitel \ref{cha:Beispiel für die Ermittlung des Kurzschlussstromes bei einer Herdzuleitung} wurde der Kurzschlussstrom bereits mit $ I_{K} = 197\,\text{A} $ ermittelt. Für die Herdzuleitung wurde bereits, nach Kapitel \ref{cha:Kapitel2}, eine Absicherung mit einem Leitungsschutzschalter Typ B 16 A gewählt. In Kapitel \ref{cha:Kapitel3} wurde ein Querschnitt von  $ A = 4,0 \,\text{mm}^{2} $ ermittelt. In der Berechnung arbeiten wir mit $ A = 4,0 \,\text{mm}^{2} $, da dieser Querschnitt in den meisten Fällen für einen Herd ausreichend ist. Es wird nun geprüft, ob die Bedingungen eingehalten werden. \\ Ermittlung von $ t_{VA} $:
+
+\[ t_{VA}=\left( \frac{k \cdot A}{I_{K}} \right)^{2} = \left( \frac{ 115 \frac{\text{A} \cdot \text{s}}{\text{mm}^{2}} \cdot 2,5 \text{mm}^{2}}{197\,\text{A}} \right)^{2} = 2,13\,\text{s} \]
+
+Die B 16 A Sicherung schaltet (siehe Kapitel \ref{cha:Kapitel4}) bei einem Strom von $ I_{K} \geq 80\,\text{A} $ in $ t_{A} \leq 0,01\,\text{s} $ ab.
+\newline
+\linebreak 
+Es handelt sich hier um einen Drehstromverbraucher und um einen Endstromkreis von 16 A. Daher ergeben sich, nach VDE 0100 Teil 410, zwei Abschaltzeiten. Wird die kleinere Abschaltzeit eingehalten, wird automatisch auch die größere eingehalten. Somit gilt für die Abschaltzeit nach VDE 0100 Teil 410: $ t = 0,07\,\text{s} $. \\
+Nun überprüfen wir die beiden Bedingungen:
+
+\begin{enumerate}
+\item Bedingung
+\[ t_{A} \leq t_{VA} \Rightarrow 0,01\,\text{s} \leq 2,13\,\text{s} \]
+\item Bedingung
+\[ t_{A} \leq t \Rightarrow 0,01\,\text{s} \leq 0,07\,\text{s}\]
+\end{enumerate}
+
+Wie wir erkennen, werden beide Bedingungen eingehalten. Der Querschnitt von $ A = 2,5 \,\text{mm}^{2} $ wurde somit verifiziert. 
+
+\subsection{Beispiel für eine Motorzuleitung}
+
+Nach Kapitel \ref{cha:Beispiel für die Ermittlung des Kurzschlussstromes bei einer Motorzuleitung} wurde der Kurzschlussstrom bereits mit $ I_{K} = 190\,\text{A} $ ermittelt. Für die Motorzuleitung wurde bereits, nach Kapitel \ref{cha:Kapitel2}, eine Absicherung mit einer Schmelzsicherung Typ 10 A gL-gG errechnet. In Kapitel \ref{cha:Kapitel3} wurde ein Querschnitt von  $ A = 1,5 \,\text{mm}^{2} $ ermittelt. Es wird nun geprüft, ob die Bedingungen eingehalten werden. \\ Ermittlung von $ t_{VA} $:
+
+\[ t_{VA}=\left( \frac{k \cdot A}{I_{K}} \right)^{2} = \left( \frac{ 115 \frac{\text{A} \cdot \text{s}}{\text{mm}^{2}} \cdot 1,5 \,\text{mm}^{2}}{190\,\text{A}} \right)^{2} = 0,83\,\text{s} \]
+
+Für die Schmelzsicherung Typ 10A gL-gG ist eine Abschaltzeit von $ t_{A} = 0,004\,\text{s} $ ermittelt wurden.
+\newline
+\linebreak 
+Es handelt sich hier um einen Motorstromkreis. Daher ergeben sich, nach VDE 0100 Teil 410, zwei Abschaltzeiten. Wird die kleinere Abschaltzeit eingehalten, wird automatisch auch die größere eingehalten. Somit gilt für die Abschaltzeit nach VDE 0100 Teil 410: $ t = 1\,\text{s} $. \\
+Nun überprüfen wir die beiden Bedingungen:
+
+\begin{enumerate}
+\item Bedingung
+\[ t_{A} \leq t_{VA} \Rightarrow 0,004\,\text{s} \leq 0,83\,\text{s} \]
+\item Bedingung
+\[ t_{A} \leq t \Rightarrow 0,004\,\text{s} \leq 1\,\text{s}\]
+\end{enumerate}
+
+Wie wir erkennen, werden beide Bedingungen eingehalten. Der Querschnitt von $ A = 1,5 \,\text{mm}^{2} $ wurde somit verifiziert. 

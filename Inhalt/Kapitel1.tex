@@ -1,0 +1,142 @@
+\part{Schnellauswahl einer Leitung, ohne aufwändige Berechnung im Alltag}
+\chapter{Schnellauswahl einer Leitung in der Praxis}
+\label{cha:Schnellauswahl einer Leitung in der Praxis}
+
+In der Praxis \index{Praxis} ist es oft nicht möglich langwierige Berechnungen durch zu führen. Daher möchte ich Standard Tabellen zeigen, damit einfacher Leitungsquerschnitte\index{Leitungsquerschnitte} ermittelt werden können. Allerdings ist es wichtig, dass bei der Ermittlung immer die Randbedingungen beachtet werden!
+
+\section{Wie benutze ich die Tabellen?}
+\label{cha:Wie benutze ich die Tabellen?}
+
+Die Benutzung der Tabellen ist vergleichsweise einfach, im Gegensatz zu den aufwändigeren Berechnungen. Es gibt hier nur zwei Schritte die zu erledigen sind. Zu beachten ist, dass WS hierbei für Wechselstrom und DS für Drehstrom steht. Aus Platzgründen mussten die Abkürzungen gewählt werden. 
+
+\begin{itemize}
+\item \textbf{Schritt 1:} In dem Schritt ermitteln wir den Querschnitt zur eingebauten Sicherung. Dieses machen wir mit den Tabellen in Kapitel \ref{cha:Auswahl nach der Belastbarkeit}. Wir schauen bei der jeweiligen Verlegeart und suchen die Sicherung. An der linken Seite steht nun der zu Verlegende \index{Querschnitt}Querschnitt.
+\item \textbf{Schritt 2:} In Kapitel \ref{cha:Auswahl nach dem Spannungsfall} können Sie mit dem ermittelten Querschnitt und der Sicherung die Länge der Leitung ermitteln. Nun wissen Sie sofort welchen Querschnitt Sie verlegen müssen und welche Länge die Leitung haben darf.
+\end{itemize}
+
+Achtung, da diese Berechnungen sich auf viele Randbedingungen verlassen ist eine Verifikation vor Ort unbedingt notwendig. Besonders wichtig ist hierbei die Berechnung des Kurzschlussschutzes. Die gesamten Tabellen gelten für Kabel und Leitungen aus Kupfer.
+
+\section{Auswahl nach der Belastbarkeit}
+\label{cha:Auswahl nach der Belastbarkeit}
+
+Die Tabellen \ref{tab:Absicherungen ohne Häufung} und \ref{tab:Absicherungen mit Häufung} zeigen die maximal mögliche \index{Absicherung}Absicherung eines Querschnittes bei der jeweiligen Verlegeart. Hierbei sind folgende Bedingungen zu beachten:
+
+\begin{itemize}
+\item Temperatur 30°C
+\item Keine Häufung von anderen Leitungen
+\end{itemize}
+
+\begin{table}[htbp]
+\caption{Absicherungen ohne Häufung}
+\label{tab:Absicherungen ohne Häufung}
+\centering
+\begin{tabular}{||>{\centering}m{3 cm}||>{\centering}m{1,7 cm}||>{\centering}m{1,7 cm}||>{\centering}m{1,7 cm}||>{\centering}m{1,7 cm}||>{\centering}m{1,7 cm}||c||}
+\hline 
+\centering Verlegeart & \multicolumn{2}{|>{\centering}m{4 cm}||}{Mehraderleitung in Rohr in Wärmegedämter Wand} & \multicolumn{2}{|>{\centering}m{4 cm}||}{Mehraderleitung in Rohr auf der Wand} & \multicolumn{2}{|>{\centering}m{4 cm}||}{Ein-mehradriges Kabel direkt auf der Wand}\\
+\hline \begin{tabular}{c} Versorgungsart \\ \hline Querschnitt\\ \end{tabular} & WS & DS & WS & DS & WS & DS\\ 
+\hline\hline 1,5 mm\textsuperscript{2} & 13 A & 13 A & 16 A & 13 A & 16 A & 16 A\\ 
+\hline 2,5 mm\textsuperscript{2} & 16 A & 16 A & 20 A & 20 A & 25 A & 20 A\\ 
+\hline 4 mm\textsuperscript{2} & 25 A & 20 A & 25 A & 25 A & 32 A & 32 A\\ 
+\hline 6 mm\textsuperscript{2} & 32 A & 25 A & 32 A & 32 A & 32 A & 32 A\\ 
+\hline 10 mm\textsuperscript{2} & 32 A & 32 A & 50 A & 32 A & 63 A & 50 A\\ 
+\hline 16 mm\textsuperscript{2} & 50 A & 50 A & 63 A & 50 A & 80 A & 63 A\\ 
+\hline 25 mm\textsuperscript{2} & 80 A & 63 A & 80 A & 80 A & 100 A & 80 A\\ 
+\hline 35 mm\textsuperscript{2} & 80 A & 80 A & 100 A & 80 A & 125 A & 100 A\\ 
+\hline
+\end{tabular} 
+\end{table}
+
+\begin{itemize}
+\item Temperatur 30°C
+\item Mit Häufung von anderen Leitungen
+\end{itemize}
+
+\begin{table}[htbp]
+\caption{Absicherungen mit Häufung}
+\label{tab:Absicherungen mit Häufung}
+\centering
+\begin{tabular}{||>{\centering}m{3 cm}||>{\centering}m{1,7 cm}||>{\centering}m{1,7 cm}||>{\centering}m{1,7 cm}||>{\centering}m{1,7 cm}||>{\centering}m{1,7 cm}||c||}
+\hline 
+\centering Verlegeart & \multicolumn{2}{|>{\centering}m{4 cm}||}{Mehraderleitung in Rohr in Wärmegedämter Wand} & \multicolumn{2}{|>{\centering}m{4 cm}||}{Mehraderleitung in Rohr auf der Wand} & \multicolumn{2}{|>{\centering}m{4 cm}||}{Ein-mehradriges Kabel direkt auf der Wand}\\
+\hline \begin{tabular}{c} Versorgungsart \\ \hline Querschnitt\\ \end{tabular} & WS & DS & WS & DS & WS & DS\\ 
+\hline\hline 1,5 mm\textsuperscript{2} & 6 A & 6 A & 10 A & 6 A & 10 A & 10 A\\ 
+\hline 2,5 mm\textsuperscript{2} & 10 A & 10 A & 13 A & 13 A & 16A & 13 A\\ 
+\hline 4 mm\textsuperscript{2} & 16 A & 13 A & 16 A & 16 A & 20 A & 20 A\\ 
+\hline 6 mm\textsuperscript{2} & 20 A & 16 A & 20 A & 20 A & 20 A & 20 A\\ 
+\hline 10 mm\textsuperscript{2} & 20 A & 20 A & 32 A & 20 A & 32 A & 32 A\\ 
+\hline 16 mm\textsuperscript{2} & 32 A & 32 A & 32 A & 32 A & 50 A & 32 A\\ 
+\hline 25 mm\textsuperscript{2} & 50 A & 32 A & 50 A & 50 A & 63 A & 50 A\\ 
+\hline 35 mm\textsuperscript{2} & 50 A & 50 A & 63 A & 50 A & 80 A & 63 A\\ 
+\hline
+\end{tabular} 
+\end{table}
+
+\section{Auswahl nach dem Spannungsfall}
+\label{cha:Auswahl nach dem Spannungsfall}
+
+\subsection{Leitungslängen zu Verbrauchern}
+\label{cha:Leitungslängen zu Verbrauchern}
+
+Die erste Tabelle \ref{tab:Leitungslängen bei Wechselstrom} zeigt die maximal erlaubten Längen bei einem normalen Wechselstromverbraucher mit einer Spannung von $ U = 230\,\text{V} $. Hierbei sind die Leitungen direkt zur Hauptverteilung verlegt, da hier mit einem \index{Spannungsfall}Spannungsfall von $ \Delta u = 3\,\text{\%} $ gerechnet wurde. Ebenfalls sind ohmsche Verbraucher angeschlossen.
+
+\begin{table}[htbp]
+\caption{Leitungslängen bei Wechselstrom}
+\label{tab:Leitungslängen bei Wechselstrom}
+\centering
+\begin{tabular}{||c||c||c||c||c||c||c||c||}
+\hline \begin{tabular}{c} Querschnitt \\ \hline Sicherungsgröße\\ \end{tabular}  & 1,5 mm\textsuperscript{2} & 2,5 mm\textsuperscript{2} & 4 mm\textsuperscript{2} & 6 mm\textsuperscript{2} & 10 mm\textsuperscript{2} & 16 mm\textsuperscript{2} & 25 mm\textsuperscript{2}\\ 
+\hline \hline 10 A &  29,0 m & 48,3 m & 77,3 m & 115,9 m & 193,2 m & 309,1 m & 483,0 m \\
+\hline 16 A & 18,1 m & 30,2 m & 48,3 m & 72,5 m & 120,8 m & 193,2 m & 301,9 m \\
+\hline 20 A & 14,5 m & 24,2 m & 38,6 m & 58,0 m & 96,6 m & 154,6 m & 241,5 m \\
+\hline 25 A & 11,6 m & 19,3 m & 30,9 m & 46,4 m & 77,3 m & 123,6 m & 193,2 m \\
+\hline 32 A & 9,1 m & 15,1 m & 24,2 m & 36,2 m & 60,4 m & 96,6 m & 150,9 m \\
+\hline 35 A & 8,3 m & 13,8 m & 22,1 m & 33,1 m & 55,2 m & 88,3 m & 138,0 m \\
+\hline 50 A & 5,8 m & 9,7 m & 15,5 m & 23,2 m & 38,6 m & 61,8 m & 96,6 m \\
+\hline 63 A & 4,6 m & 7,7 m & 12,3 m & 18,4 m & 30,7 m & 49,1 m & 76,7 m \\
+\hline 
+\end{tabular} 
+\end{table}
+
+Die zweite Tabelle \ref{tab:Leitungslängen bei Drehstrom} zeigt die maximal erlaubten Längen bei einem normalen Drehstromverbraucher mit einer Spannung von $ U = 400\,\text{V} $. Hierbei sind die Leitungen direkt zur Hauptverteilung verlegt, da hier mit einem Spannungsfall von $ \Delta u = 3\,\text{\%} $ gerechnet wurde. Ebenfalls sind ohmsche Verbraucher angeschlossen.
+
+\begin{table}[htbp]
+\caption{Leitungslängen bei Drehstrom}
+\label{tab:Leitungslängen bei Drehstrom}
+\centering
+\begin{tabular}{||c||c||c||c||c||c||c||c||}
+\hline \begin{tabular}{c} Querschnitt \\ \hline Sicherungsgröße\\ \end{tabular}  & 1,5 mm\textsuperscript{2} & 2,5 mm\textsuperscript{2} & 4 mm\textsuperscript{2} & 6 mm\textsuperscript{2} & 10 mm\textsuperscript{2} & 16 mm\textsuperscript{2} & 25 mm\textsuperscript{2}\\ 
+\hline \hline 10 A &  58,2 m & 97,0 m & 155,2 m & 232,8 m & 388,0 m & 620,8 m & 969,9 m \\
+\hline 16 A & 36,4 m & 60,6 m & 97,0 m & 145,5 m & 242,5 m & 388,0 m & 606,2 m \\
+\hline 20 A & 29,1 m & 48,5 m & 77,6 m & 116,4 m & 194,0 m & 310,4 m & 485,0 m \\
+\hline 25 A & 23,3 m & 38,8 m & 62,1 m & 93,1 m & 155,2 m & 248,3 m & 388,0 m \\
+\hline 32 A & 18,2 m & 30,3 m & 48,5 m & 72,7 m & 121,2 m & 194,0 m & 303,1 m \\
+\hline 35 A & 16,6 m & 27,7 m & 44,3 m & 66,5 m & 110,9 m & 177,4 m & 277,1 m \\
+\hline 50 A & 11,6 m & 19,4 m & 31,0 mm & 46,6 m & 77,6 m & 124,2 m & 194,0 m \\
+\hline 63 A & 9,2 m & 15,4 m & 24,6 m & 37,0 m & 61,6 m & 98,5 m & 154,0 m \\
+\hline 
+\end{tabular} 
+\end{table}
+
+\subsection{Leitungslängen zu Unterverteilungen}
+\label{cha:Leitungslängen zu Unterverteilungen}
+
+Wichtig sind auch die \index{Leitungslängen zu Unterverteilungen}Leitungslängen zu Unterverteilungen. Hierbei ist zu beachten, dass hier nur ein geringer Teil des gesamten Spannungsfalls abfallen darf.
+
+\begin{table}[htbp]
+\caption{Leitungslängen zu Unterverteilungen}
+\label{tab:Leitungslängen zu Unterverteilungen}
+\centering
+\begin{tabular}{||c||c||c||c||c||c||c||c||}
+\hline \begin{tabular}{c} Querschnitt \\ \hline Sicherungsgröße\\ \end{tabular} & 1,5 mm\textsuperscript{2} & 2,5 mm\textsuperscript{2} & 4 mm\textsuperscript{2} & 6 mm\textsuperscript{2} & 10 mm\textsuperscript{2} & 16 mm\textsuperscript{2} & 25 mm\textsuperscript{2} \\
+\hline\hline 10 A & 19,4 m & 32,3 m & 51,7 m & 77,6 m & 129,3 m & 206,9 m & 323,3 m \\
+\hline 16 A & 12,1 m & 20,2 m & 32,3 m & 48,5 m & 80,8 m & 129,3 m & 202,1 m \\
+\hline 20 A & 9,7 m & 16,2 m & 25,9 m & 38,8 m & 64,7 m & 103,5 m & 161,7 m \\
+\hline 25 A & 7,8 m & 12,9 m & 20,7 m & 31,0 m & 51,7 m & 82,8 m & 129,3 m \\
+\hline 32 A & 6,1 m & 10,1 m & 16,2 m & 24,2 m & 40,4 m & 64,7 m & 101,0 m \\
+\hline 35 A & 5,5 m & 9,2 m & 14,8 m & 22,2 m & 37,0 m & 59,1 m & 92,4 m \\
+\hline 50 A & 3,9 m & 6,5 m & 10,3 m & 15,5 m & 25,9 m & 41,4 m & 64,7 m \\
+\hline 63 A & 3,1 m & 5,1 m & 8,2 m & 12,3 m & 20,5 m & 32,8 m & 51,3 m \\
+\hline
+
+\end{tabular} 
+\end{table}

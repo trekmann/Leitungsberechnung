@@ -1,0 +1,354 @@
+\chapter{Überstromschutz von Kabel und Leitungen}
+\label{cha:Kapitel3}
+
+Eine Leitung/Kabel besitzt einen maximalen Strom, den sie dauerhaft halten kann. Eine Übersicht über die Ströme findet man in Kapitel \ref{cha:Belastbarkeit von Kabel und Leitungen}. Wir die Leitung dauerhaft überlastet, kann sie schweren Schaden nehmen und es kann bis zu einem Brand kommen. Die Leitung nach dem Überstromschutz zu dimensionieren, erfordert eine bestimmte Reihenfolge.
+
+\begin{enumerate}
+\item Welcher Strom wird verwendet? Nennstrom der Sicherung oder Betriebsstrom des Gerätes?
+\item Ermittlung der Strombelastbarkeit mit den Reduktionsfaktoren und dem Betriebsstrom
+\item Auswahl des Kabel, der Leitung anhand der Bedingungen nach VDE 0100 Teil 430
+\end{enumerate}
+
+\section{Welcher Strom wird in der Berechnung verwendet?}
+\label{cha:Welcher Strom wird in der Berechnung verwendet?}
+
+Hier gibt es mehrere Situationen, auf die wir näher eingehen müssen. Es sind dafür mehrere Informationen nötig. Welche Art von Gerät wird angeschlossen? Wo wird dieses Gerät angeschlossen, in der Industrie oder einem Privathaushalt? Wie wird das Gerät geschützt, mittels einer normalen Sicherung (ausgewählt nach Kapitel \ref{cha:Kapitel2}) oder eines Motorschutzes? Im weiteren Verlauf wird auf mehrere Situationen eingegangen.
+
+\subsection{Anschluss eines Motors in der Industrie}
+
+Hierbei gehen wir immer von der bereits in Kapitel \ref{cha:Kapitel2} beschriebenen Situation aus, nämlich das der Überstromschutz des Motor von einem Motorschutz übernommen wird. 
+
+\begin{enumerate}
+\item Der Motor wird über eine Steckvorrichtung angeschlossen. 
+\begin{itemize}
+\item Befindet sich der Motorschutz vor der Steckvorrichtung, kann auf der Leitung kein höherer Strom fließen, als der vom Motor aufgenommene Strom. Somit wird für weitere Berechnungen der Betriebsstrom des Motors angenommen.
+\item Befindet sich der Motorschutz hinter der Steckvorrichtung, kann die Leitung durch ein falsch angeschlossenes Gerät überlastet werden. Da diese Situation unter allen Umständen zu vermeiden ist, muss hier der Nennstrom der vorgeschalteten Sicherung verwendet werden.
+\end{itemize}
+\item Wird der Motor direkt angeschlossen, also ohne jegliche Steckvorrichtungen, so kann die Leitung auf den Betriebsstrom des Motors ausgelegt werden. Da man auch hier von einem Motorschutz ausgeht, wird dieser den Stromkreis abschalten, sobald der Betriebsstrom überschritten wird. Daher kann die Leitung an die Stromaufnahme des Motors angepasst werden.
+\end{enumerate}
+
+\subsection{Anschluss allgemeiner Geräte in der Industrie}
+
+Werden in der Industrie allgemeine Geräte angeschlossen, gehen wir von dem Anschluss durch eine Steckvorrichtung aus. Da wir in dieser Situation nicht von einem bestimmten Betriebsstrom ausgehen können, muss die Leitung auf den Nennstrom, der nach Kapitel \ref{cha:Kapitel2} gewählten Sicherung ausgelegt werden. An dieser Stelle sei noch mal erwähnt, dass die Sicherung passend zum maximalen Strom der Steckvorrichtung gewählt werden sollte.
+
+\subsection{Anschluss von Geräten (Motor, allgemeine Geräte) in Privathaushalten}
+
+Hierbei werden wir nicht zwischen fest angeschlossenen Geräten oder dem Anschluss durch  eine Steckvorrichtung unterscheiden. Es gibt hier nur eine einzige Regelung, nämlich dass immer der Nennstrom der vorgeschalteten Sicherung zu verwenden ist. Es gibt hier auch Ausnahmen, denen wir allerdings keine weitere Beachtung schenken.
+Dies ist auch ganz einfach zu begründen. In einem Privathaushalt muss davon ausgegangen werden, dass an einer Steckvorrichtung alle möglichen Geräte angeschlossen werden. Daher muss die Zuleitung jeder Steckvorrichtung auf den Nennstrom der Sicherung ausgelegt werden. Wird ein Gerät fest angeschlossen (Herd, Durchlauferhitzer), muss auch diese Zuleitung auf den Nennstrom der vorgeschalteten Sicherung ausgelegt werden. Auch in dieser Situation kann nicht davon ausgegangen werden, dass niemals ein Gerät gewechselt wird. 
+
+\subsubsection{Herdzuleitung}
+
+Gerade bei der Zuleitung zum Herd müssen wir davon ausgehen, dass hier die verschiedensten Geräte angeschlossen werden und somit die Leitung auf den Nennstrom der vorgeschaltet Sicherung auszulegen ist. Es gibt hierbei leider auch Meisterschulen, die der Ansicht sind, dass die Herdzuleitung als fest angeschlossener Wärmeverbraucher zu verstehen ist und somit die Zuleitung auf den Betriebsstrom ausgelegt werden kann. Diese Aussage ist definitiv inkorrekt! Die Herdzuleitung ist auf den Nennstrom der vorgeschalteten Sicherung auszulegen. Währe diese Aussage richtig, käme dies einem Verbot gleich einen anderen Herd an dieser Zuleitung zu betreiben. Diese Aussage ist vollkommen praxisfremd und somit kann es nicht korrekt in die Realität umgesetzt werden.
+
+\textbf{Des Weiteren sei erwähnt, dass nach DIN 18015 Teil 1 die Herdzuleitung auf eine Belastbarkeit von 20 A auszulegen ist.}
+
+\section{Ermittlung der Mindeststrombelastbarkeit von Kabel und Leitungen}
+
+In einer jeden Situation muss die Mindeststrombelastbarkeit von Kabel und Leitungen ermittelt werden, um sie später mit den Bedingungen nach VDE zu vergleichen und somit einen Querschnitt zu verifizieren. Die Mindeststrombelastbarkeit der Leitung wird nach Formel \ref{eq:Mindeststrombelastbarkeit} ermittelt. Hier ist wichtig, dass der Nennstrom der Sicherung oder des fest angeschlossenen Verbrauchers bekannt ist (siehe Kapitel \ref{cha:Welcher Strom wird in der Berechnung verwendet?}). Weiterhin sind Faktoren wichtig, welche die Belastbarkeit verringert. Diese Faktoren werden in den Kapiteln \ref{cha:Faktor der Häufung f(H)} sowie \ref{cha:Faktor der Temperatur Erhöhung/Erniedrigung f(T)}.
+
+\begin{equation}
+I_{Z.MIN}=\frac{I_{Nennstrom}}{f(H)\cdot f(T)}
+\label{eq:Mindeststrombelastbarkeit}
+\end{equation}
+
+\begin{list}{}{}
+\item $ I_{Z.MIN} $ = Ermittelte Mindestbelastbarkeit der Leitung / Kabel
+\item $ I_{Nennstrom} $ = Nennstrom der Sicherung oder des Verbrauchers, siehe Kapitel \ref{cha:Welcher Strom wird in der Berechnung verwendet?}
+\item $ f(H)  $ = Häufung von Leitungen, siehe Kapitel Kapiteln \ref{cha:Faktor der Häufung f(H)}
+\item $ f(T) $ = Temperaturerhöhung der Leitung, siehe \ref{cha:Faktor der Temperatur Erhöhung/Erniedrigung f(T)}
+\end{list}
+
+\clearpage
+\newpage
+
+\subsection{Belastbarkeit von Kabel und Leitungen}
+\label{cha:Belastbarkeit von Kabel und Leitungen}
+
+\begin{table}[h]
+\caption{Belastbarkeit von Kabel und Leitungen aus Kupfer bei 30°C}
+\label{fig:Strombelastbarkeit}
+\begin{tabular}{|c||c||c||c||c||c||c||c||c||c||c|}
+\hline
+Verlegeart & \multicolumn{2}{|c||}{A1} & \multicolumn{2}{|c||}{A2} & \multicolumn{2}{|c||}{B1} & \multicolumn{2}{|c||}{B2} & \multicolumn{2}{|c|}{C} \\ \hline
+\multicolumn{1}{|c||}{Belastete Adern} & 2 & 3 & 2 & 3 & 2 & 3 & 2 & 3 & 2 & 3 \\ \hline \hline
+1,5 mm\textsuperscript{2}& 15,5 & 13,5 & 15,5 & 13 & 17,5 & 15,5 & 16,5 & 15 & 19,5 & 17,5 \\ \hline
+2,5 mm\textsuperscript{2}& 19,5 & 18 & 18,5 & 17,5 & 24 & 21 & 23 & 20 & 27 & 24 \\ \hline
+4 mm\textsuperscript{2}& 26 & 24 & 25 & 23 & 32 & 28 & 30 & 27 & 36 & 32 \\ \hline
+6 mm\textsuperscript{2}& 34 & 31 & 32 & 29 & 41 & 36 & 38 & 34 & 46 & 41 \\ \hline
+10 mm\textsuperscript{2}& 46 & 42 & 43 & 39 & 57 & 50 & 52 & 46 & 63 & 57 \\ \hline
+10 mm\textsuperscript{2}& - & - & - & - & - & - & - & - & - & 59,43* \\ \hline
+16 mm\textsuperscript{2}& 61 & 56 & 57 & 52 & 76 & 68 & 69 & 62 & 85 & 76 \\ \hline
+25 mm\textsuperscript{2}& 80 & 73 & 75 & 68 & 101 & 89 & 90 & 80 & 112 & 96 \\ \hline
+35 mm\textsuperscript{2}& 99 & 89 & 92 & 83 & 125 & 110 & 111 & 99 & 138 & 119 \\ \hline
+50 mm\textsuperscript{2}& 119 & 108 & 110 & 99 & 151 & 134 & 133 & 118 & 168 & 144 \\ \hline
+70 mm\textsuperscript{2}& 151 & 136 & 139 & 125 & 192 & 171 & 168 & 149 & 213 & 184 \\ \hline
+95 mm\textsuperscript{2}& 182 & 164 & 167 & 150 & 232 & 207 & 201 & 179 & 258 & 223 \\ \hline
+120 mm\textsuperscript{2}& 210 & 188 & 192 & 172 & 269 & 239 & 232 & 206 & 299 & 259 \\ \hline
+150 mm\textsuperscript{2}& 240 & 216 & 219 & 196 & - & - & - & - & 344 & 299 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{list}{}{}
+\item A1: Aderleitung in Rohr in Wärmegedämter Wand
+\item A2: Mehraderleitung in Rohr in Wärmegedämter Wand
+\item B1: Aderleitung in Rohr auf der Wand
+\item B2: Mehraderleitung in Rohr auf der Wand
+\item C:  Mehradriges Kabel direkt auf der Wand
+\item *   Die bei 10 mm\textsuperscript{2} genannte Strombelastung bezieht sich auf 25°C Umgebungstemperatur und bei Verlegung auf Mauerwerk oder ähnlich gut wärmeableitenden Materialien. Mit dem Faktor für 25°C (1,06) ergibt sich eine Belastung von 63 A
+\end{list}
+
+Die Tabelle \ref{fig:Strombelastbarkeit} zeigt die Belastbarkeit von Kabel und Leitungen bei den jeweiligen Verlegemethoden. Zu beachten ist, dass die Tabelle für eine Umgebungstemperatur von 30°C ausgelegt ist und alle Angaben in Ampere gelistet sind. Weiterhin ist die Tabelle auf eine Maximale Temperatur von 70°C ausgelegt. Um die Belastbarkeit aus der Tabelle auszulesen, muss bekannt sein, wie die Leitung bzw. das Kabel verlegt wird. Des Weiteren muss die Art der Spannungsversorgung bekannt sein.
+
+2 Belastete Adern  entsprechen dem Wechselstrom \\
+3 Belastete Adern  entsprechen dem Drehstrom \\
+Nun kann in der jeweiligen Spalte die Belastbarkeit des Kabels oder der Leitung ermittelt werden.
+
+Die \ref{fig:Strombelastbarkeit Erdverlegung} zeigt die Belastbarkeit von Kabeln bei der Verlegung in der Erde. Es gilt hierbei eine Temperatur von 20°C! Weiterhin ist zu beachten, dass alle Werte in Ampere gelistet sind. \\
+
+\begin{table}[h]
+\caption{Belastbarkeit von Kabel und Leitungen auf Kupfer in der Erde}
+\label{fig:Strombelastbarkeit Erdverlegung}
+\centering
+\begin{tabular}{||c||c||c||c||c||}
+\hline Leitungsart & \multicolumn{2}{|c||}{NYY} & \multicolumn{2}{|c||}{NYCWY} \\
+\hline Verlegeart & Einzelader & Mehrader & Einzelader & Mehrader \\ 
+\hline \hline 1,5 mm\textsuperscript{2} & 30 & 27 & 31 & 27 \\ 
+\hline 2,5 mm\textsuperscript{2}& 39 & 36 & 40 & 36 \\ 
+\hline 4 mm\textsuperscript{2}& 50 & 47 & 51 & 47 \\ 
+\hline 6 mm\textsuperscript{2}& 62 & 59 & 63 & 59 \\ 
+\hline 10 mm\textsuperscript{2}& 83 & 79 & 84 & 79 \\ 
+\hline 16 mm\textsuperscript{2}& 107 & 102 & 108 & 102 \\ 
+\hline 25 mm\textsuperscript{2}& 138 & 133 & 139 & 133 \\ 
+\hline 35 mm\textsuperscript{2}& 164 & 159 & 166 & 160 \\ 
+\hline 50 mm\textsuperscript{2}& 195 & 188 & 196 & 190 \\ 
+\hline 70 mm\textsuperscript{2}& 238 & 232 & 238 & 234 \\ 
+\hline 95 mm\textsuperscript{2}& 286 & 280 & 281 & 280 \\ 
+\hline 120 mm\textsuperscript{2}& 325 & 318 & 315 & 319 \\ 
+\hline 150 mm\textsuperscript{2}& 365 & 359 & 347 & 357 \\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+\begin{list}{}{}
+\item Einzelader: Ein Drehstromkabel, das aus drei Einzeln verlegten Kabeln besteht.
+\item Mehrader: Ein Mehraderdrehstromkabel. Alle Adern sind hier in einem Kabel untergebracht.
+\end{list}
+
+\subsection{Faktor der Häufung f(H)}
+\label{cha:Faktor der Häufung f(H)}
+
+Der Faktor der Häufung, zu sehen in Tabelle \ref{tab:Häufung}, ist ein gern vergessener Faktor. Eine jede Leitung bzw. ein jedes Kabel erwärmt sich im Betrieb, da in ihnen eine Leistung umgesetzt wird. Diese Wärme hat einen Einfluss auf die Belastbarkeit der Leitung. Je wärmer die Leitung wird, desto weniger belastbar ist die Leitung. In den Grundlagen wurden die gängigsten Faktoren für die Häufung aufgezählt.
+
+\begin{table}[h]
+\caption{Häufung}
+\label{tab:Häufung}
+\begin{tabular}{||p{5cm}||c||c||c||c||c||c||c||c||c||c||}
+\hline Verlegeanordnung & \multicolumn{10}{|c||}{Umrechnungsfaktoren}\\
+\hline\hline Anzahl der Leitungen & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ 
+\hline Gebündelte Verlegung auf der Wand, in der Wand, im Rohr oder im Kanal & 1 & 0,8 & 0,7 & 0,65 & 0,6 & 0,57 & 0,54 & 0,52 & 0,5 & 0,48 \\ 
+\hline Einlagig auf der Wand & 1 & 0,85 & 0,79 & 0,75 & 0,73 & 0,72 & 0,72 & 0,71 & 0,7 & 0,7 \\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+%\clearpage
+
+Liegen jetzt zwei oder mehr Leitungen in ihrem Verlauf von mehr als 1 Meter parallel, so muss für diese Leitungen eine Häufung angerechnet werden. Ebenfalls muss die Häufung für Leitungen berücksichtigt werden, die mit mehr als 30 \% ihrer Nennbelastbarkeit, nach VDE 0298 Teil 4, belastet werden. Aber auch hier muss nicht gleich jede Leitung als zusätzliche Häufung angesehen werden. Wichtig ist, wie hoch die Leitung dauerhaft mit der Nennbelastung belastet wird. Berechnen wir eine Leitung, in deren Verlauf zwei weitere Leitungen liegen, die mit je 50 \% belastet sind, so zählt dieses hier nur als eine zusätzlich voll belastete Leitung. Hierbei wird also bei zwei Leitungen der Reduktionsfaktor ermittelt.
+
+Allgemein kann gesagt werden, parallel liegende Leitungen mit einer Belastung von 30 \% - 60 \% werden als zusätzliche Häufung mit 0,5 Leitungen angesehen. Sollte sich hierbei eine Komma zahl ergeben, wird immer auf die nächst höhere Natürliche Zahl aufgerundet. Hierzu wird die von uns zu berechnende Leitung hinzu addiert (also +1) und bei der sich ergebenden Anzahl an belasteten Leitungen, wird in Tabelle (1.3) der Reduktionsfaktor abgelesen. 
+\\Hierzu ein kurzes Beispiel. Wir haben eine Herdleitung verlegt. Im Verlauf dieser Leitung, liegt die Leitung für die Versorgung des Wohnzimmers. Die Auslastung dieser Leitung liegt bei 40 \%. Nach dem obigen Daten ergibt sich eine Häufung von 1,5 Leitungen (Die Grundlegende Leitung zum Herd ist Nr. 1 und die des Wohnzimmers ist die 0,5). Da in keiner Tabelle die Häufung von 1,5 zu finde ist, muss bei 2 geschaut werden.\\
+Ergibt sich eine dauerhafte Belastung von > 60 \% für die parallel liegende Leitung, so wird hier von einer Häufung von einer zusätzlichen Leitung ausgegangen. Auch hier wird die von uns zu berechnende Leitung hinzu addiert (also +1) und bei der sich ergebenden Anzahl an belastet Leitungen wird der Reduktionsfaktor abgelesen.
+
+\subsubsection*{Häufung in Privathaushalten}
+
+Zur Häufung in Privathaushalten gibt es sehr viele verschiedene Meinungen. Selbst in Fachzeitschriften wird sporadisch die Meinung vertreten, dass in Privathaushalten die Häufung zu vernachlässigen ist. Das ist meines Erachtens ein grob fahrlässiges Vorgehen und kann zu einer nicht zu unterschätzenden Gefahr werden. Zwei einfache Beispiele sollen verdeutlichen, wie wichtig die Häufung auch in Privathaushalten ist. 
+Es handelt sich hier lediglich um Beispiele, die nicht die genaue Betrachtung vor Ort ersetzten. Die Beispiele sollen lediglich verdeutlichen, dass auch in Privathaushalten eine Häufung eindeutig vorhanden ist. Hier kann es zu erhöhter Belastung kommen, deswegen sollte der Planer immer größere Querschnitte wählen, um eine unzulässige Erwärmung der Leitung aus zu schließen. Des Weiteren kann grade in Privathaushalten nicht von einer definierten Belastung ausgegangen werden. Wie genau die Leitungen belastet werden, muss immer der Planer vor Ort entscheiden. Daher werden für die folgenden Beispiele definierte Werte gewählt, diese können von den tatsächlichen Werten in der Leitungsberechnung abweichen.
+
+\begin{enumerate}
+\item Wie wir schon festgestellt haben, sind Häufungen von weniger als einem Meter parallel verlegter Kabel bzw. Leitungen nicht zu beachten. Was ist aber wenn die Zuleitungen zum Herd, Waschmaschine und dem Trockner mehrere Meter parallel verlegt werden? Dieser Fall ist in meiner Berufserfahrung schon öfters vorgekommen. Es ergibt sich sehr wohl eine Häufung von Leitungen, welche die Belastbarkeit der Leitungen deutlich reduziert. Berechnen und verlegen wir die Zuleitung zum Herd und liegt zu dieser Leitung die Zuleitungen zum Trockner und zur Waschmaschine parallel, so kann man von einer dauerhaften Belastbarkeit von mindestens 80 \%, bei den beiden parallel liegenden Leitungen, ausgehen. In dieser Situation wird also von einer Häufung mit zwei Leitungen ausgegangen. Es wird somit der Reduktionsfaktor für drei Leitungen abgelesen. 
+\item Wir betrachten eine alltägliche Situation. Die Zuleitungen zum Herd, zur Geschirrspülmaschine und die Zuleitungen für die Arbeitssteckdosen in der Küche werden über mehrere Meter parallel verlegt. Es wird nun in der Geschirrspülmaschine Geschirr gespült, Belastung der Leitung 30 \% - 40 \%. Gleichzeitig wird mittels eines Wasserkochers Wasser erhitzt um es beim Kochen zu benutzen oder Tee auf zu brühen, Belastung der Leitung 50 \% - 60 \%. Zusätzlich wird auf dem Herd das Mittagessen zubereitet, Belastung der Leitung auch gute 50 \%. Hier bei kommen wir auf eine Häufung von 2 Leitungen. Diese Häufung muss bei der Berechnung der Zuleitungen zum Herd, zu der Geschirrspülmaschine und für die Arbeitssteckdosen beachtet werden.
+\end{enumerate}
+
+\subsection{Faktor der Temperatur Erhöhung/Erniedrigung f(T)}
+\label{cha:Faktor der Temperatur Erhöhung/Erniedrigung f(T)}
+
+\begin{table}[h]
+\caption{Umrechnungsfaktoren der Temperatur}
+\label{tab:Temperatur}
+\centering
+\begin{tabular}{||c||c||}
+\hline Umrechnungstemperatur & Berechnungsfaktor \\ 
+\hline\hline 20 & 1,12 \\ 
+\hline 25 & 1,06 \\ 
+\hline 30 & 1 \\ 
+\hline 35 & 0,94 \\ 
+\hline 40 & 0,87 \\ 
+\hline 
+\end{tabular}
+\end{table}
+
+Tabelle \ref{tab:Temperatur} zeigt den Faktor der Temperatur Erhöhung/Erniedrigungder. Dieser Faktor ist auch ein gerne vergessener Faktor in der Leitungsberechnung. Die Leitung kann durch einen dauerhaften Stromfluss oder durch äußere Einflüsse erwärmt werden. Dieser Faktor beschreibt die Belastbarkeit der Leitung die durch die Veränderung der Umgebungstemperatur geändert wird. Nach DIN muss die Leitung auf eine Umgebungstemperatur von 25°C ausgelegt werden. Ich halte es jedoch für sicherer die Leitung auf 30°C aus zu legen, da diese Temperatur im Sommer auch in Innenräumen erreicht werden kann. Im weiteren Verlauf dieses Dokumentes wird immer von einer Temperatur von 30°C ausgegangen, es sei denn es wird ausdrücklich etwas anderes erwähnt.
+
+\subsection{Beispiele für Ermittlung der Mindeststrombelastbarkeit von Kabel und Leitungen}
+
+Als Beispiele werden möglichst realistische Szenarien gewählt und durchgerechnet. Es handelt sich hier um frei definierte Werte, die von den tatsächlichen Werten in eine Berechnung abweichen können. Es ist eine genaue Besichtigung vor Ort unabdingbar.
+
+\subsubsection{Beispiel für eine Herdzuleitung}
+
+Es wird die Zuleitung zu einem Herd verlegt. Dieser Herd befindet sich in einem Privathaushalt. In dem Verlauf liegen die Leitungen für die Waschmaschine und des Trockners parallel über mehrere Meter. Die Leitungen der Waschmaschine und die Zuleitung von dem Trockner werden dauerhaft mit ca. 80 \% belastet. Die dauerhafte Verlegetemperatur liegt bei 25°C. Nach DIN 18015 Teil 1 muss die Herdzuleitung auf eine Nennbelastbarkeit von 20 A ausgelegt werden. Nach Formel \ref{eq:Mindeststrombelastbarkeit} gilt:
+
+\begin{list}{}{}
+\item $ I_{Nennstrom} = 20\,\text{}A $
+\item $ f(H)=0,7 $
+\item $ f(T)=1,06 $ 
+\end{list}
+
+
+\[ I_{Z.MIN}=\frac{I_{Nennstrom}}{f(H) \cdot f(T)} = \frac{20\,\text{A}}{0,7 \cdot 1,06} = 27\,\text{A} \]
+
+Die Zuleitung zum Herd muss also eine Mindestbelastbarkeit von 27 A aufweisen.
+
+\subsubsection{Beispiel für eine Zuleitung einer Waschmaschine}
+
+Die Waschmaschine wird in einem normalen Einfamilienhaus aufgestellt. Es wurde für diese Waschmaschine bereits ein Leitungsschutzschalter von Typ B 16 A ermittelt. Für die folgende Berechnung wird ein Nennstrom von 16 A angenommen. Parallel zu der Leitung liegt die Zuleitung zum Wohnzimmer und dessen dauerhafte Belastung ist mit 45 \% anzusetzen. Da beide Leitungen in ihrem Verlauf einlagig auf der Wand verlegt werden gilt für die Häufung, f(H) = 0,85. Nach Formel \ref{eq:Mindeststrombelastbarkeit} gilt:
+
+\begin{list}{}{}
+\item $ I_{Nennstrom} = 16\,\text{A} $
+\item $ f(H)=0,85 $
+\item $ f(T)=1,0 $ 
+\end{list}
+
+\[ I_{Z.MIN}=\frac{I_{Nennstrom}}{f(H) \cdot f(T)} = \frac{16\,\text{A}}{0,85 \cdot 1,0} = 19\,\text{A} \]
+
+Die Zuleitung zu der Waschmaschine muss also eine Mindestbelastbarkeit von 19 A aufweisen.
+
+\subsubsection{Beispiel für eine Zuleitung zu einem Motor}
+
+Der für diese Berechnung verwendete Motor wird einem früherem Beispiel übernommen. Die Zuleitung zum Motor wird in der Industrie verlegt und wird direkt angeschlossen. Der Überstromschutz wird von einem Motorschutz übernommen. Dieser Motorschutz sorgt ebenfalls dafür, dass der Nennstrom der Überstromschutzeinrichtung dem Betriebsstrom des Gerätes entspricht. Die Zuleitung wird auf der Wand in Elektroinstallationsrohr verlegt und parallel liegen drei weitere voll belastet Zuleitungen für andere Motoren in diesem Rohr. Die Leitungen sind gebündelt verlegt, wie es bei der Verlegung in Elektroinstallationsrohren üblich ist. Es gilt also die Häufung für 4 Leitungen die zu ermitteln ist, da auch die von uns verlegte Zuleitung eine Belastung von > 60 \% aufweist. Nach Formel \ref{eq:Mindeststrombelastbarkeit} gilt:
+
+\begin{list}{}{}
+\item $ I_{Nennstrom} = 9,4\,\text{A} $
+\item $ f(H)=0,65 $
+\item $ f(T)=1,0 $ 
+\end{list}
+
+\[ I_{Z.MIN}=\frac{I_{Nennstrom}}{f(H) \cdot f(T)} = \frac{9,4\,\text{A}}{0,65 \cdot 1,0} = 14,5\,\text{A} \]
+
+\section{Auswahl der Kabel und Leitungen nach VDE 0100 Teil 430}
+
+In der VDE 0100 Teil 430 sind zwei Bedingungen eindeutig geregelt die für die Leitungsberechnung unbedingt einzuhalten sind.
+
+1. Bedingung:
+\begin{equation}
+I_{B}\leq I_{N.Sicherung}\leq I_{Z.Leitung}\Longrightarrow I_{Z.MIN}\leq I_{Z.Leitung}
+\label{eq:Überstrom 1Bedingung}
+\end{equation}
+
+2. Bedingung:
+\begin{equation}
+I_{2}\leq 1,45 \cdot I_{Z}
+\label{eq:Überstrom 2Bedingung}
+\end{equation}
+
+\subsection{Erste Bedingung nach VDE 0100 Teil 430}
+Die erste Bedingung lautet:
+
+\[ I_{B}\leq I_{N.Sicherung}\leq I_{Z.Leitung}\Longrightarrow I_{Z.MIN}\leq I_{Z.Leitung} \]
+
+\begin{list}{}{}
+\item $ I_{B} $ = Betriebsstrom des angeschlossenen Gerätes
+\item $ I_{N.Sicherung} $ = Hier wird der Nennstrom der Überstromschutzeinrichtung verwendet. Was als Überstromschutzeinrichtung verwendet wird und welcher Strom für die Berechnung wichtig ist, wurde bereits ausführlich beschrieben.
+\item $ I_{ZMIN} $ = Diese Ermittlung des Stromes wurde bereits ausführlich behandelt.
+\item $ I_{Z.Leitung} $ = Wird aus den Grundlagentabellen abgelesen. Zu beachten ist hierbei, die Art des Verbraucher, Drehstrom oder Wechselstrom und die Verlegung der Leitung. Weiterhin werden die ermittelten Werte verglichen und es wird ein Querschnitt gewählt.
+\end{list}
+
+\subsubsection{Beispiel für eine Herdzuleitung}
+
+Wie wir bereits wissen, muss die Mindestbelastbarkeit der Leitung $ I_{Z.MIN} = 27\,\text{A} $ sein. Daraus folgt:
+
+\begin{list}{}{}
+\item $ I_{B} = 20\,\text{A} $
+\item $ I_{N.Sicherung} = 20\,\text{A} $
+\item $ I_{Z.MIN} = 27\,\text{A} $
+\end{list}
+
+Die DIN 18015 Teil 1 schreibt eine Mindestbelastbarkeit der Leitung von 20 A vor, daher wird in der weiteren Berechnung von diesem Strom ausgegangen. Die in der Praxis übliche 16 A Absicherung wir hier nicht beachtet, da die Berechnung DIN gerecht ausgeführt wird.
+Wie wir bereits wissen muss $ I_{Z.Leitung} $ mindestens so groß sein, oder größer sein als $ I_{Z.MIN} $. Da keine Verlegebedingung genannt wurde, gehen wir von einer normalen Unterputzverlegung aus. Dies wäre also Verlegeart C. Des Weiteren handelt es sich bei einem Herd um einen Drehstromverbraucher, also werden 3 Adern belastet. Daher wird bei C $ \rightarrow $ 3 belasteten Adern, der notwendige Strom ermittelt. Wenn wir die Tabelle begutachten, sehen wir einen Wert von $ I_{Z.Leitung} = 32\,\text{A} $ bei einem Querschnitt von 4 mm\textsuperscript{2}
+\newline
+\linebreak
+Überprüfen wir nun die Bedingung nach VDE:
+
+\[ I_{B}\leq I_{N.Sicherung}\leq I_{Z.Leitung}\Longrightarrow I_{Z.MIN}\leq I_{Z.Leitung} 
+\]
+
+\[ 20\,\text{A}\leq 20\,\text{A}\leq 32\,\text{A}\Longrightarrow 27\,\text{A}\leq 32\,\text{A} 
+\]
+
+Diese Bedingung ist erfüllt mit einem Querschnitt von 4 mm\textsuperscript{2}. Würde diese Bedingung mit 2,5 mm\textsuperscript{2} durchgerechnet, so würde diese Bedingung nicht erfüllt. Es sei an dieser Stelle erwähnt, dass es sich hierbei um eine durchaus realistische Berechnung handelt und trotzdem 4 mm\textsuperscript{2} verwendet werden muss. 
+
+{\color{red} \textbf{Ermittelter Querschnitt 4 mm\textsuperscript{2}. Dieses ist eine durchaus praxisnahe Dimensionierung. }}
+
+\subsubsection{Beispiel für eine Waschmaschine}
+
+Wie wir bereits wissen, muss die Mindestbelastbarkeit der Leitung $ I_{Z.MIN} = 19\,\text{A} $ sein. Daraus folgt:
+
+\begin{list}{}{}
+\item $ I_{B} = 16\,\text{A} $
+\item $ I_{N.Sicherung} = 16\,\text{A} $
+\item $ I_{Z.MIN} = 19\,\text{A} $
+\end{list}
+
+Wie wir bereits wissen, muss $ I_{Z.Leitung} $ mindestens so groß bzw. größer sein als $ I_{Z.MIN} $. Da keine Verlegebedingung genannt wurde, gehen wir von einer Verlegung der Leitung in einem Kunststoffrohr aus. Dieses wäre also Verlegeart B2. Des Weiteren handelt es sich bei einer Waschmaschine um einen Wechselstromverbraucher, also werden zwei Adern belastet. Daher wird bei B2 $ \rightarrow $ 2 belasteten Adern, der notwendige Strom ermittelt. Wenn wir die Tabelle begutachten, sehen wir einen Wert von $ I_{Z.Leitung} = 23\,\text{A} $ bei einem Querschnitt von 2,5 mm\textsuperscript{2}. Überprüfen wir nun die Bedingung nach VDE:
+\newline
+\linebreak
+Überprüfen wir nun die Bedingung nach VDE:
+
+\[ I_{B}\leq I_{N.Sicherung}\leq I_{Z.Leitung}\Longrightarrow I_{Z.MIN}\leq I_{Z.Leitung} 
+\]
+
+\[ 16\,\text{A}\leq 16\,\text{A}\leq 23\,\text{A}\Longrightarrow 19\,\text{A}\leq 23\,\text{A} 
+\]
+
+Diese Bedingung ist erfüllt mit einem Querschnitt von 2,5 mm\textsuperscript{2}.
+
+{\color{red} \textbf{Ermittelter Querschnitt 2,5 mm\textsuperscript{2}.}}
+
+\subsubsection{Beispiel für einen Motor}
+
+Wie wir bereits wissen, muss die Mindestbelastbarkeit der Leitung $ I_{Z.MIN} = 14,5\,\text{A} $ sein. Daraus folgt:
+
+\begin{list}{}{}
+\item $ I_{B} = 9,4\,\text{A} $
+\item $ I_{N.Sicherung} = 9,4\,\text{A} $
+\item $ I_{Z.MIN} = 14,5\,\text{A} $
+\end{list}
+
+Wie wir bereits wissen, muss $ I_{Z.Leitung} $ mindestens so groß bzw. größer sein als $ I_{Z.MIN} $. Es wurde bereits erklärt, dass die Zuleitung zum Motor direkt auf der Wand in Elektroinstallationsrohr verlegt wird. Dieses währe also Verlegeart B2. Des Weiteren handelt es sich bei einem Motor um einen Drehstromverbraucher, also werden 3 Adern belastet. Daher wird bei B2 $ \rightarrow $ 3 belasteten Adern, der notwendige Strom ermittelt. Wenn wir die Tabelle begutachten, sehen wir einen Wert von $ I_{Z.Leitung} = 15\,\text{A} $ bei einem Querschnitt von 1,5 mm\textsuperscript{2}. Überprüfen wir nun die Bedingung nach VDE:
+\newline
+\linebreak
+Überprüfen wir nun die Bedingung nach VDE:
+
+\[ I_{B}\leq I_{N.Sicherung}\leq I_{Z.Leitung}\Longrightarrow I_{Z.MIN}\leq I_{Z.Leitung} 
+\]
+
+\[ 9,4\,\text{A}\leq 9,4\,\text{A}\leq 15\,\text{A}\Longrightarrow 14,5\,\text{A}\leq 15\,\text{A} 
+\]
+
+Diese Bedingung ist erfüllt mit einem Querschnitt von 1,5 mm\textsuperscript{2}.
+
+{\color{red} \textbf{Ermittelter Querschnitt 1,5 mm\textsuperscript{2}.}}
+
+\subsection{Zweite Bedingung nach VDE 0100 Teil 430}
+\label{cha:Zweite Bedingung nach VDE 0100 Teil 430}
+
+Nach Formel \ref{eq:Überstrom 2Bedingung} gilt:
+
+\[ I_{2}\leq 1,45 \cdot I_{Z} \]
+
+mit $ I_{2} = 1,45 \cdot I_{N.Sicherung} $ folgt für die zweite Bedingung:
+
+\[ 1,45 \cdot I_{N.Sicherung} \leq 1,45 \cdot I_{Z} | \cdot \frac{1}{1,45} \]
+
+\[  I_{N.Sicherung}\leq I_{Z.Leitung} \]
+
+Diese Bedingung ist bereits in der ersten Bedingung geprüft worden und wird daher nicht weiter beachtet. {\color{red} \textbf{ACHTUNG!}} Diese Berechnung gilt nur für die in diesem Dokument erwähnten Sicherungen. Ältere Schmelzsicherungen der Typ gL haben einen anderen $ I_{2} $ Wert!

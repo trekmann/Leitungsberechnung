@@ -1,0 +1,261 @@
+\part{Ausführliche Dimensionierung eine Leitung}
+\chapter{Grundlagen}
+\label{cha:Kapitel1}
+
+Für die Berechnung einer Leitung sind einige wichtige Kenntnisse erforderlich. In diesem Dokument werden die wichtigsten Kenntnisse vermittelt, um alle weiteren Kapitel zu verstehen. Hierzu wird ausführlich die Funktionweise von Sicherungen beschrieben.
+
+Ein jeder Verbraucher dessen Strom keinen sinusförmigen Verlauf mehr hat, wird von Netzoberwellen überlagert. Die Oberwellen können auch in Privathaushalten zu einer Neutralleiterüberlastung führen. Insbesondere in der Industrie können Oberwellen, unter anderem durch Schaltnetzteile in Computern, Servern, EVGs in Leuchtstofflampen verursacht, zu einer Überlastung des \index{Neutralleiter}Neutralleiters führen. In diesem Dokument wird den Oberwellen keine Beachtung geschenkt.
+
+Dieses Dokument, das Dokument zu dem \index{Oberwellen}Oberwellen, ein Programm um eine Leitung zu berechnen und vieles mehr finden Sie auf der Webseite zum Dokument:
+\url{http://www.dieleitungsberechnung.de}
+
+\section{Rechtliche Grundlagen / Haftungsausschluss}
+\label{cha:Rechtliche Grundlagen / Haftungsausschluss}
+
+Es wird keine Haftung übernommen, für fehlerhafte Leitungsberechnung sowie fehlerhafte Leitungsverlegung. Außerdem wird keine Haftung für die technische Korrektheit des Dokuments übernommen, da dieses Dokument lediglich als Beispiel zu verstehen ist. Des Weiteren dürfen Kabel und Leitungen nur von Fachleuten verlegt werden. Das Verlegen von Kabeln und Leitungen durch Laien ist eindeutig verboten! Siehe dazu das folgende Zitat aus der NAV\footnote{NAV \S13 Absatz 2}:
+\begin{quote}
+(2) Unzulässige Rückwirkungen der Anlage sind auszuschließen. Um dies zu gewährleisten, darf die Anlage nur nach den Vorschriften dieser Verordnung, nach anderen anzuwendenden Rechtsvorschriften und behördlichen Bestimmungen sowie nach den allgemein anerkannten Regeln der Technik errichtet, erweitert, geändert und instand gehalten werden. In Bezug auf die allgemein anerkannten Regeln der Technik gilt § 49 Abs. 2 Nr. 1 des Energiewirtschaftsgesetzes entsprechend. Die Arbeiten dürfen außer durch den Netzbetreiber nur durch ein in ein Installateurverzeichnis eines Netzbetreibers eingetragenes Installationsunternehmen durchgeführt werden; im Interesse des Anschlussnehmers darf der Netzbetreiber eine Eintragung in das Installateurverzeichnis nur von dem Nachweis einer ausreichenden fachlichen Qualifikation für die Durchführung der jeweiligen Arbeiten abhängig machen. Mit Ausnahme des Abschnitts zwischen Hausanschlusssicherung und Messeinrichtung einschließlich der Messeinrichtung gilt Satz 4 nicht für Instandhaltungsarbeiten.
+\end{quote}
+
+In diesem Abschnitt ist eindeutig geregelt, dass eine Installation nur durch eine Fachkraft ausgeführt werden darf. Daher wird jegliche Haftung ausgeschlossen, sollten die Leitungen nicht fachgerecht, sondern laienhaft verlegt werden.
+
+\section{Grundlagen Leitungsschutzschalter (LSS)}
+\label{cha:Grundlagen Leitungsschutzschalter}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.3\textwidth]{../Bilder/UnterlagenHager/MBN116}
+\caption{Leitungsschutzschalter Typ B16 A (von \cite{hager2012})}
+\label{fig:MBN116}
+\end{figure}
+
+Das Bild \ref{fig:MBN116} zeigt einen \index{Leitungsschutzschalter}Leitungsschutzschalter mit der \index{Charakteristik}Charakteristik B (siehe Kapitel \ref{cha:Funktionsweise Leitungsschutzschalter}) und 16A. Zu sehen ist, dass dieser Leitungsschutzschalter\index{Leitungsschutzschalter} (im weiteren LSS\index{LSS} genannt) einem Schalter ähnelt und keiner Schmelzsicherung\index{Schmelzsicherung}. Die Erläuterung des genauen technischen Aufbaus findet in den folgenden Kapiteln statt.
+\clearpage
+Bei Leitungsschutzschaltern sind grundsätzlich folgende Einschränkungen zu beachten:
+
+\begin{itemize}
+\item LSS dürfen nicht benutzt werden, um Motoren zu schützen, dieser Anwendungsfall tritt in privaten Haushalten eher selten auf.
+\item LSS sind geeignet, um zum Trennen von Stromkreisen verwendet zu werden. Betriebsmäßiges Schalten darf über LSS \underline{nicht} erfolgen!
+\item \index{Temperaturbereich}Temperaturbereich \unit[-5]{°C} bis \unit[+40]{°C} wobei ein Durchschnittswert von \unit[+35]{°C} innerhalb von 24 h nicht überschritten werden darf.
+\item Der Einbauort muss unter 2000 m NN liegen.
+\end{itemize}
+
+Besonders wichtig sind die folgenden Eingenschaften auf die wir in Kapitel \ref{cha:Funktionsweise Leitungsschutzschalter} näher eingehen.
+
+\begin{itemize}
+\item[\textbf{Charakteristik:}]Eingegangen wird auf die Charakteristik B,C sowie D.
+\item[\textbf{Nennstrom $ I_{N} $:}]Beschreibt den Strom, welchen die Sicherung dauerhaft halten kann.
+\item[\textbf{Kurzschlussschaltvermögen:}]Ist die Höhe des \index{Kurzschlussstrom}Kurzschlussstromes, welcher noch abschaltbar ist.\index{Kurzschlussschaltvermögen}
+\end{itemize}
+
+\subsection{Funktionsweise}
+\label{cha:Funktionsweise Leitungsschutzschalter}
+
+Bevor wir die Funktionsweise näher erläutern, stellen wir zuerst eine Überlegung an, für welche Aufgaben dieser Leitungsschutzschalter gedacht ist. Der Name zeigt deutlich den eigentlichen Zweck auf. Dieses Element ist dazu gedacht die Leitung zu schützen. Wie soll er dies erledigen?
+
+\begin{enumerate}
+\item \textbf{Überstrom:} Bei einem zu hohen Stromfluss, verursacht durch zu viele Verbraucher an den Steckdosen, muss der LSS ausschalten. Stellen Sie sich folgende Situation vor: Bei Ihnen arbeitet Ihr Partner \slash  Ihre Partnerin in der Küche und bereitet das Essen zu. Nun möchten Sie einen Tee trinken. Sobald Sie den Wasserkocher einschalten, löst die Sicherung aus. Der Strom ist hier auf genau 16,2 A angestiegen, also nur 0,2 A über dem erlaubten Wert. Eigentlich arbeitet der LSS korrekt, aber es wäre kein akzeptabler Zustand. Der LSS muss in der Anfangsphase verzögert auslösen, da es einfach inakzeptabel ist, wegen einer kleinen Überlastung die Verteilung aufzusuchen, um die Sicherung wieder einzuschalten.
+
+\item \textbf{Kurzschluss:} Wenn ein Kurzschluss auftritt, so muss der Kurzschluss umgehend abgeschaltet werden. Dies ist die Aufgabe des Leitungsschutzschalters.
+
+\end{enumerate}
+
+Aufgrund dieser Überlegungen können wir schlussfolgern, dass ein LSS mehrere Möglichkeiten besitzen muss, um die fehlerhaften Zustände zu verhindern. Dies ist zum Einem der thermische Auslöser, mittels eines Bi-Metalls, und ein magnetischer Auslöser.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8 \textwidth]{../Bilder/Thermischer_Ausloeser.pdf}
+\caption{Thermischer Auslöser}
+\label{fig:Thermischer_Ausloeser}
+\end{figure}
+
+Bild \ref{fig:Thermischer_Ausloeser} zeigt eine Kennlinie für den thermischen Auslöser. Dieser funktioniert mit einem Bi-Metall. Dieses hat die Eigenschaft, dass es sich bei Erwärmung verbiegt. Eine Eingenschaft, die dieses Metall erhält, aufgrund der Verbindung von zwei verschiedenen Metallen. Diese Metalle dehnen sich bei Erwärmung unterschiedlich aus. Dadurch verbiegt sich das Bi-Metall. Das hat den Vorteil, dass bei langsam ansteigendem Strom der LSS nicht sofort auslöst. Erwärmt sich jetzt das Bi-Metall durch einen Strom, so verbiegt es sich und löst damit die Sicherung aus. Der Stromkreis ist geöffnet und der Überstrom abgeschaltet. Dieses Verhalten ist Bild \ref{fig:Thermischer_Ausloeser} zu erkennen. Bei langsam ansteigendem Strom sinkt langsam die Auslösezeit. Genau dieses Verhalten ist von uns gewünscht, damit ein LSS nicht sofort auslöst.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8 \textwidth]{../Bilder/Magnetischer_Ausloeser.pdf}
+\caption{magnetischer Auslöser}
+\label{fig:Magnetischer_Ausloeser}
+\end{figure}
+
+Betrachten wir das Bild \ref{fig:Magnetischer_Ausloeser}. Dort ist ersichtlich, dass bis zum dreifachen Nennstrom nichts passiert und dann der LSS auslöst. Hier ist die Schaltschwelle überschritten wurden. Der magnetische Auslöser spricht an und bringt den LSS schnellstmöglich zum Auslösen. Das Auslösen geschieht über ein magnetisches Feld. Der magnetische Auslöser besitzt einen Kennwert bei dem er auslöst. Hierbei wird das Magnetfeld ausreichend stark, damit ein Kontakt öffnen kann. Zusätzlich ist eine sogenannte Funkbogenlöschkammer\index{Funkbogenlöschkammer} in der Sicherung eingebaut. Sollte die Sicherung ausschalten, so kann ein Lichtbogen entstehen. Damit die Sicherung nicht beschädigt wird, muss dieser Lichtbogen gelöscht werden.
+
+Wenn nun beide Bilder \ref{fig:Magnetischer_Ausloeser} und \ref{fig:Thermischer_Ausloeser} zusammengefügt werden, dann erhalten wir im Ergebnis die Kennlinien im Bild \ref{fig:Zeit-Strom-Diagramm für Leitungsschutzschalter}. Dieses Bild zeigt drei LSS der Kategorien B,C und D. Diese besitzen alle unterschiedliche Kennwerte. Die genauen Eigenschaften der Zeit-Strom-Kennlinie werden in Kapitel \ref{cha:Zeit-Strom-Diagramm Leitungsschutzschalter} beschrieben.
+
+Eine wichtige Größe ist das Bemessungsschaltvermögen\index{Bemessungsschaltvermögen}. In Bild \ref{fig:MBN116} ist es durch ein Rechteck mit einer großen Zahl gekennzeichnet. Es befindet sich die Zahl 6000 in einem Rechteck. Diese gibt an, wie hoch der maximale Kurschlussstrom sein darf, welcher zum fließen kommt (hier 6000 A). Sollte dieser Strom überschritten werden, so kann eine korrekte Funktionsweise nicht mehr garantiert werden. Es muss also zwingend darauf geachtet werden, dass die eingesetzten Geräte eine höheres Bemessungsschaltvermögen besitzen als die Höhe des auftretenden Kurzschlussstromes angibt. Für Leitungsschutzschalter welche direkt einem Endstromkreis schützen, muss mindestens ein Bemessungsschaltvermögen von 6000 A verbaut sein.
+
+\subsection{Zeit-Strom-Diagramm}
+\label{cha:Zeit-Strom-Diagramm Leitungsschutzschalter}
+
+Das Bild \ref{fig:Zeit-Strom-Diagramm für Leitungsschutzschalter} zeigt das \index{Zeit-Strom-Diagramm}Zeit-Strom-Diagramm der Leitungsschutzschalter. Sehr gut sind die einzelnen Charakteristiken zu erkennen, welche bereits in Kapitel \ref{cha:Funktionsweise Leitungsschutzschalter} angesprochen wurden. 
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8 \textwidth]{../Bilder/UnterlagenHager/Ausloese_001i_MGS_D}
+\caption{Zeit-Strom-Diagramm für Leitungsschutzschalter (von \cite{hager2012})}
+\label{fig:Zeit-Strom-Diagramm für Leitungsschutzschalter}
+\end{figure}
+
+Auch die beiden Fälle, thermischer sowie \index{magnetischer Auslöser}magnetischer Auslöser sind in den Kennlinien zu sehen. Bei Betrachtung der Charakteristik B ist ersichtlich, dass diese beim dreifachen Nennstrom den Stromkreis trennt. Die Kennlinie geht hier bis zum fünf fachen des Nennstroms. Dieser Bereich ist gekennzeichnet durch das Abschalten mittels magnetischen Auslöser. Der vorherige Bereich wird mittels des \index{thermischer Auslöser}thermischen Auslösers abgeschaltet. Bei den Charakteristiken C und D ist es ähnlich. Lediglich die Werte des magnetischen Auslösers unterscheiden sich. Dies wiederum ist das wichtigste Unterscheidungskriterium der einzelnen Charakteristiken. Die beiden Einfassungen des magnetischen Auslösers zeigen das sichere Abschalten des LSS bei bestimmten Zeiten. Die Tabelle \ref{tab:Abschaltzeiten der Leitungsschutzschalter-Charakteristiken} zeigt eine Übersicht über diese Zeiten und Ströme.
+
+\begin{table}[htbp]
+\caption{Abschaltzeiten der Leitungsschutzschalter-Charakteristiken}
+\label{tab:Abschaltzeiten der Leitungsschutzschalter-Charakteristiken}
+\centering
+\begin{tabular}{||c||c||c||c||c||c||c||}
+\hline Charakteristik &  \multicolumn{2}{|c||}{B}  &  \multicolumn{2}{|c||}{C}  &  \multicolumn{2}{|c||}{D}  \\ \hline
+\hline $ t_{A} $ & 5 s & 0,1 s & 5 s & 0,1 s & 5 s & 0,1 s \\ 
+\hline $ I_{N} / I_{K} $ & 3 & 5 & 5 & 10 & 10 & 20 \\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+Die \index{Prüfströme}Prüfströme geben an, wie lange ein definierter Strom fließen kann, um den Leitungsschutzschalter in einer definierten Zeit zum Auslösen zu bringen. Diese Ströme sind zum Testen des magnetischen Auslösers wichtig. Die Tabelle \ref{tab:Prüfströme der Leitungsschutzschalter} zeigt die Prüfströme der drei Charakteristiken B, C sowie D.
+
+Kleiner Prüfstrom $ I_{1} $ muss in der Zeit $ t > 1h $ auslösen.
+
+\begin{equation}
+I_{1} = 1,13 \cdot I_{N}
+\end{equation}
+
+
+Großer Prüfstrom $ I_{2} $ muss in der Zeit $ t < 1h $ auslösen.
+
+\begin{equation}
+I_{2} = 1,45 \cdot I_{N}
+\end{equation}
+
+ 
+ \begin{table}[htbp]
+ \caption{Prüfströme der Leitungsschutzschalter}
+ \label{tab:Prüfströme der Leitungsschutzschalter}
+ \centering
+ \begin{tabular}{||c||c||c||c||}
+  \hline Was & LSS Typ B & LSS Typ C & LSS Typ D \\ 
+  \hline \hline Kleiner Prüfstrom $ I_{1} $ & 1,13 & 1,13 & 1,13  \\ 
+  \hline Großer Prüfstrom $ I_{2} $ & 1,45 & 1,45 & 1,45 \\
+  \hline
+  \end{tabular} 
+ \end{table}
+
+\subsection{Verwendung des Zeit-Strom-Diagramms}
+\label{cha:Verwendung des Zeit-Strom-Diagramms Leitungsschutzschalter}
+
+Die Verwendung der Kennlinien ist ziemlich einfach. Es gibt zwei Dinge die man unterscheiden muss. Die verschiedenen Arten des Auslösens (magnetisch sowie thermisch)  müssen bei dem Ablesen der Werte berücksichtigt werden.
+
+Das ablesen des thermischen Auslösers soll Anhand eines Beispiels veranschaulicht werden. Folgende Daten sind uns bekannt:
+
+\begin{list}{}{}
+\item $ I_{N} = 10\,\text{A} $
+\item $ I_{K} = 15\,\text{A} $
+\end{list}
+
+Wir suchen die Zeit, welche die Sicherung benötigt um den Strom weg zu schalten. Wie können ein Vielfaches des Nennstromes mit $ \frac{I_{K}}{I_{N}} = 1,5$ berechnen. Damit loten wir auf der Kennlinie nach oben, bis wir auf die Kennlinie der Sicherung stoßen. Dort lesen wir die Zeit von $ t_{A} = 400\,\text{s} $ ab.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.449\textwidth]{../Bilder/UnterlagenHager/LSS_Auslesen}
+\caption{Ablesen des Zeit-Strom-Diagramm eines LSS (Diagramm von \cite{hager2012})}
+\label{fig:LSS_Auslesen}
+\end{figure}
+
+Der magnetische Auslöser ist noch einfacher. Hierzu ist lediglich ein Blick in Tabelle \ref{tab:Abschaltzeiten der Leitungsschutzschalter-Charakteristiken} nötig. Übersteigt das vielfache des Nennstromes die Werte in der Tabelle \ref{tab:Abschaltzeiten der Leitungsschutzschalter-Charakteristiken}, so sind die entsprechenden Abschaltzeiten in der Spalte zu nutzen.
+
+\section{Grundlagen Schmelzsicherungen}
+\label{cha:Grundlagen Schmelzsicherungen}
+
+\subsection{Funktionsweise}
+\label{cha:Funktionsweise Schmelzsicherung}
+\index{Schmelzsicherung}
+Die Funktionsweise ist verhältnismäßig einfach. In einem Porzellankörper befindet sich ein Draht und Quarzsand. Nachfolgend die Erklärung der einzelnen Komponenten:
+
+\begin{itemize}
+\item \textbf{Porzellankörper:} Dient als stabiler Rahmen der Sicherung. Gleichzeitig ist es in der Lage, die hohe Temperaturen bei einem Kurschluss zu verkraften.
+\item \textbf{Draht:} Dieser Draht ist das Herzstück der Sicherung. Dieser ist so dimensioniert, dass dieser Draht bei einem definierten Strom in einer definierten Zeit schmilzt. Wann diese Zeiten und Ströme sind zeigt Bild \ref{fig:Zeit-Strom-Diagramm Schmelzsicherung}. \index{Zeit-Strom-Diagramm Schmelzsicherung}Übersteigt ein Strom nun den erlaubten Grenzen des Drahtes, so wird der Draht so heiß das dieser schmilz und den Stromkreis unterbricht. Das ist das Geheimnis der Schmelzsicherung.
+\item \textbf{Quarzsand:} Bei dem Schmelzen des Drahtes kann es zu einem \index{Lichtbogen}Lichtbogen kommen. Dieser wird durch den Quarzsand gelöscht und somit der Stromkreis geöffnet.
+\end{itemize}
+
+
+
+\subsection{Zeit-Strom-Diagramm}
+\label{cha:Zeit-Strom-Diagramm Schmelzsicherung}
+
+Das in Bild \ref{fig:Zeit-Strom-Diagramm Schmelzsicherung} abgebildete Zeit-Strom-Diagramm zeigt gL-gG Schmelzsicherungen. Die Wichtigsten sind in dieser Kennlinie abgebildet. Auch diese Sicherung hat einen \index{Prüfstrom}Prüfstrom, welchen die Sicherung eine definierte Zeit lang halten muss. Wichtig ist weiterhin auch die logarithmische Achsteilung zu achten.
+
+Großer Prüfstrom $ I_{2} $ muss in der Zeit $ t < 1\,\text{h} $ auslösen.
+\begin{equation}
+ I_{2} = 1,45 \cdot I_{N} 
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95 \textwidth]{../Bilder/UnterlagenHager/Zeit_Stromkenn_001i}
+\caption{Zeit-Strom-Diagramm Schmelzsicherung (von \cite{hager2012})}
+\label{fig:Zeit-Strom-Diagramm Schmelzsicherung}
+\end{figure}
+
+\subsection{Verwendung des Zeit-Strom-Diagramms}
+\label{cha:Verwendung des Zeit-Strom-Diagramms Schmelzsicherung}
+
+Es werden beliebige Werte gewählt, um die Umgangsweise zu verdeutlichen.
+
+Der Kurzschlussstrom beträgt $ I_{K} = 200\,\text{A} $
+
+Die Abschaltzeit $ t_{A} = 20\,\text{ms} $
+
+Es wird die Sicherung gesucht, die bei diesen Werten nicht auslöst und somit in den Stromkreis eingebracht werden kann. In Abbildung \ref{fig:ZSK_gLgG_Ablesen} werden nun zwei Markierungen eingebracht für den jeweiligen Strom und die jeweilige Zeit.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1\textwidth]{../Bilder/UnterlagenHager/ZSK_gLgG_Ablesen}
+\caption{Ablesen des Zeit-Strom-Diagramm einer Schmelzsicherung (Diagramm von \cite{hager2012})}
+\label{fig:ZSK_gLgG_Ablesen}
+\end{figure}
+
+Wie man in dem Bild \ref {fig:ZSK_gLgG_Ablesen} sieht, liegt der Schnittpunkt genau auf der Kennlinie der 16 A Sicherung. Sollte dies nicht der Fall sein, so ist die nächst kleine Sicherung zu wählen. Also jene Kennlinie, welche näher an der Zeitachse liegt.
+
+\clearpage
+
+\section{Grundlagen der Energieversorgungsnetze}
+\label{cha:Grundlagen der Energieversorgungsnetze}
+
+\subsection{Abschaltzeiten im öffentlichen Versorgungsnetz}
+\label{cha:Abschaltzeiten im öffentlichen Versorgungsnetz}
+
+\begin{table}[htbp]
+\caption{Abschaltzeiten}
+\label{tab:Abschaltzeiten}
+\centering
+\begin{tabular}{||c||c||c||c||}
+\hline \multicolumn{2}{|c|}{Was} & TN - Netz & TT - Netz \\ 
+\hline\hline Für Endstromkreise bis 32 A & 230 V AC & 0,4 s & 0,2 s \\ 
+\hline Für Endstromkreise bis 32 A & 400 V AC & 0,2 s & 0,07 s \\ 
+\hline \multicolumn{2}{|c|}{Verteilungsstromkreis und Stromkreis > 32 A} & 5 s & 1 s \\ 
+\hline \multicolumn{2}{|c|}{Motorstromkreis} & 5 s & 5 s \\ 
+\hline 
+\end{tabular}
+\end{table}
+
+In der neuen VDE 0100 Teil 410 wurden auch die \index{Abschaltzeiten}Abschaltzeiten für die \index{Versorgungsnetze}Versorgungsnetze neu geregelt. Es ist für die Ermittlung des Kurzschlussschutzes wichtig, dass die Abschaltzeiten bekannt sind. Es wird in Kapitel \ref{cha:Kapitel4} auf diese Werte eingegangen.
+
+Endstromkreise sind Stromkreise mit fest angeschlossenen Betriebsmitteln oder Betriebsmitteln die über eine Steckvorrichtung versorgt werden. Verteilungsstromkreise haben keine direkt angeschlossenen Betriebsmittel, sondern dienen lediglich zur Verteilung der elektrischen Energie. In Motorstromkreisen muss zwischen zwei Situationen unterschieden werden:
+
+\begin{enumerate}
+\item Die Installation des Motors in der Industrie. Es kann hierbei davon ausgegangen werden, dass bei einer definierten Steckvorrichtung oder bei einem Festanschluss genau ein Gerät betrieben wird. Somit gelten hier immer die Abschaltzeiten aus Tabelle \ref{tab:Abschaltzeiten} - Motorstromkreise (auch hier ist Vorsicht geboten und erfordert meistens eine genaue Besichtigung vor Ort!).
+\item Geht man im Privathaushalt von fest angeschlossenen Motoren aus, haben sie die oben genannten Abschaltzeiten. Werden die Motoren jedoch über Steckvorrichtungen angeschlossen, so gelten hier nicht mehr die Abschaltzeiten für Motoren, sondern die Abschaltzeiten der normalen Stromkreise. Dies hat einen einfachen Hintergrund. Es kann in einem Privathaushalt nicht davon ausgegangen werden, dass die Steckvorrichtung lediglich für den Motor genutzt wird. Die Zuleitung für die Steckvorrichtung muss so angepasst werden, dass sie in jeden Betriebsfall rechtzeitig bei einem Kurzschluss oder im Überstromfall abschaltet.
+\end{enumerate}
+
+\section{Idealisierte Berechnungen}
+\label{cha:Idealisierte Berechnungen}
+
+In den folgenden Berechnungen wird von den folgenden \index{idealisierten Bedingungen}idealisierten Bedingungen ausgegangen: $ \cos\varphi = 1 $.
+
+Bei dieser idealisierten Betrachtung werden keine imaginären Widerstände der Kabel und Leitungen berücksichtigt. Für die weiteren Berechnungen werden nur die ohmschen Anteile der Leitungen betrachtet. Dadurch ergibt sich eine Vereinfachung der Rechnung. 
+
+Für weitere Berechnungen gelten also:
+\begin{equation}
+\cos\varphi = 1 \Rightarrow R = Z
+\end{equation}
+Diese idealisierte Berechnung wird nicht für die Ermittlung des Betriebsstroms des Gerätes angewendet. Es ergäbe sich dort ein zu großer Rechenfehler, der in den weiteren Berechnungen gravierende Auswirkungen hätte.
+
+Des Weiteren werden einige Berechnungen unter idealisierten Betriebsbedingungen betrachtet und unter vereinfachten Bedingungen Sicherungen ausgewählt. Dieses Dokument soll lediglich als grobe Linie für die Berechnung dienen und daher wird an vielen Stellen mit idealen Bedingungen gerechnet. Dieses Dokument kann nicht die genaue Besichtigung vor Ort ersetzten!
