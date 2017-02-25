@@ -8,48 +8,145 @@ Aus diesem Grund ist das Thema Spannungsfall mit einer der wichtigsten Punkte. H
 \section{Grundlagen zum Spannungsfall}
 \label{cha:Grundlagen zum Spannungsfall}
 
+Der Spannungsfall auf einer Leitung lässt sich auf die Berechnung des Widerstandes zurückführen. Ein jeder Kupferleiter hat einen Leitungswiderstand. Dieser Widerstand kann mit der Formel \ref{eq:BerechnungWiderstandLeitung} berechnet werden.
 
+\begin{equation}
+R = \frac{L}{K \cdot A}
+\label{eq:BerechnungWiderstandLeitung}
+\end{equation}
+
+\begin{list}{}{}
+	\item $ L $ = Länge der Leitung
+	\item $ A $ = Querschnitt der zu berechnenden Leitung
+	\item $ K $ = Elektrische Leitfähigkeit der Leitung, bei Kupfer $ K = 56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot\,\Omega} $
+\end{list}
+
+Damit ergibt sich die Einheit von $ R $ zu:
+
+\[ [R] = \frac{m}{\frac{\text{m}}{\text{mm}^{2} \cdot\,\Omega} \cdot {mm}^{2}} = \Omega \]
+
+Wir haben bewiesen, dass sich mit der Formel  \ref{eq:BerechnungWiderstandLeitung} der Widerstand einer Leitung berechnen lässt. Der nächste Schritt ist der Berechnen der Leitung. Hier sind zwei Faktoren entscheidend.
+
+\begin{itemize}
+	\item $ 2 \longrightarrow $ Beschreibt eine Wechselstromleitung. Die zwei steht hier für die Leiterschleife zum Verbraucher und vom Verbraucher wieder zurück.
+	\item $ \sqrt{3} \longrightarrow  $ Beschreibt eine Drehstromleitung. Die $ \sqrt{3} $ ist hier der Verkettungsfaktor des Stromstroms. 
+\end{itemize}
+
+Mit diesem Wissen ergibt sich die Formel \ref{eq:BerechnungWiderstandLeitung} zur Formel \ref{eq:BerechnungWiderstandLeitungFaktor}.
+
+\begin{equation}
+R = \frac{2 \cdot L}{K \cdot A}
+\label{eq:BerechnungWiderstandLeitungFaktor}
+\end{equation}
+
+Mit dem normalen ohmschen Gesetzt errechnet sich eine Spannung mit der Formel \ref{eq:OhmschesGesetzt}.
+
+\begin{equation}
+U = R \cdot I
+\label{eq:OhmschesGesetzt}
+\end{equation}
+
+\[ [U] = \Omega \cdot A = V \]
+
+Nun setzten wir die Formel \ref{eq:BerechnungWiderstandLeitungFaktor} in die Formel \ref{eq:OhmschesGesetzt} ein und erhalten Formel \ref{eq:SpannungsfallWS}. Wobei die errechnete Spannung der Spannungsfall ist, daher wurde dieser um ein $ \Delta $ ergänzt.
+
+\begin{equation}
+\Delta U = \frac{2 \cdot L \cdot I}{K \cdot A}
+\label{eq:SpannungsfallWS}
+\end{equation}
+
+Auch hier machen wir wieder eine Kontrollrechnung ob die Einheiten passen:
+
+\[ [\Delta U] = \frac{m \cdot A}{\frac{m}{mm^{2} \cdot\,\Omega} \cdot {mm}^{2}} = \Omega \cdot A = V\]
+
+Das Ergebnis ist der errechnete Spannungsfall auf der Leitung. Der Faktor 2 kann hier einfach gegen den Faktor $ \sqrt{3} $ ausgetauscht werden, wenn eine Drehstromleitung vorliegt. Der letzte Schritt ist die Umrechnung in \%, da dieses einfacher mit den Grenzwerten zu vergleichen ist. Grundsätzlich werden die \% nach Formel \ref{eq:Prozentrechnung} ermittelt.
+
+\begin{equation}
+\Delta u = \frac{ \Delta U}{U} \cdot 100%
+\label{eq:Prozentrechnung}
+\end{equation}
+
+\begin{itemize}
+	\item $ \Delta U $ : Spannungsfall in V
+	\item $ \Delta u $ : Spannungsfall in \%
+	\item $ U $ : Spannung der Leitung
+\end{itemize}
+
+Setzten wir die Formel \ref{eq:Prozentrechnung} in die Formel \ref{eq:SpannungsfallWS} ein, dann erhalten wir die endgültige Formel \ref{eq:SpannungsfallWSProzent}.
+
+\begin{equation}
+\Delta u = \frac{100\% \cdot 2 \cdot L \cdot I}{K \cdot A \cdot U}
+\label{eq:SpannungsfallWSProzent}
+\end{equation}
 
 \section{Grenzwerte und gesetzliche Bestimmungen}
 \label{cha:Grenzwerte und gesetzliche Bestimmungen}
 
-\subsection{Grenzwerte nach DIN 18015 Teil 1}
-{\color{red}\textbf{Der max. erlaubte Spannungsfall beträgt 3 \% ab dem Zähler bis zur Anschlussstelle der Verbraucher.}}
-In der Praxis hat es sich leider durchgesetzt, den Spannungsfall zu vernachlässigen. Fakt ist, es sind max. 3 \% erlaubt. Wird diese Grenze überschritten, so kann dies dazu führen, dass im Fehlerfall kein Versicherungsschutz mehr besteht und der Elektriker auf den Kosten sitzen bleibt. 
-Beispiel des Spannungsfalls in Verbindung mit einer UV:
-Hauptverteilung mit Zähler $ \longrightarrow $ Unterverteilung $ \longrightarrow $ Anschlussstelle des Verbrauchers \\
-Hauptverteilung mit Zähler $ \longrightarrow $ Unterverteilung = 1 \% Spannungsfall\\
-Unterverteilung $ \longrightarrow $ Anschlussstelle des Verbraucher = 2 \% Spannungsfall\\
+\subsection{Grenzwerte nach DIN 18015 Teil 1}
 
-\subsection{TAB}
-Die TAB aus Niedersachsen schreibt folgende Grenzwerte auf der Hauptleitung vor: (Hauptleitung = Hausanschlusskasten $ \longrightarrow $ Zähler).
-\begin{table}[h]
-	\caption{Spannungsfall nach TAB}
-	\label{fig:Spannungsfall nach TAB}
-	\centering
-	\begin{tabular}{|c||c||c|}
-		\hline Von & Bis & Spannungsfall \\ 
-		\hline\hline  & 100 kVA & 0,5 \% \\ 
-		\hline 100 kVA & 250 kVA & 1  \% \\ 
-		\hline 250 kVA & 400 kVA & 1,25 \% \\ 
-		\hline 400 kVA &  & 1,5 \% \\ 
-		\hline 
-	\end{tabular}
-\end{table}
+{\color{red}\textbf{Der max. erlaubte Spannungsfall beträgt 3 \% ab dem Zähler bis zur Anschlussstelle der Verbraucher.}}
 
-\subsection{VDE 0100 Teil 520}
+In der Praxis hat es sich leider durchgesetzt, den Spannungsfall zu vernachlässigen. Fakt ist, es sind max. 3 \% erlaubt. Wird diese Grenze überschritten, so kann dies dazu führen, dass im Fehlerfall kein Versicherungsschutz mehr besteht und der Elektriker auf den Kosten sitzen bleibt. 
 
-{\color{red}\textbf{Die VDE schreibt einen Grenzwert von 5 \% für andere elektrische Verbraucher und 3\% für Beleuchtung vor.}}
+Beispiel des Spannungsfalls in Verbindung mit einer UV:
 
-Die 5 \% sollten auch über die Verlängerungsleitungen ausgedehnt werden, die an den Steckdosen angeschlossen sind (Empfehlung VDE).
-Das heißt: 5 \% vom Hausanschlusskasten bis zum Endverbraucher inklusive seiner Zuleitung.
+Hauptverteilung mit Zähler $ \longrightarrow $ Unterverteilung $ \longrightarrow $ Anschlussstelle des Verbrauchers \\
+
+Hauptverteilung mit Zähler $ \longrightarrow $ Unterverteilung = 1 \% Spannungsfall\\
+
+Unterverteilung $ \longrightarrow $ Anschlussstelle des Verbraucher = 2 \% Spannungsfall\\
+
+
+\subsection{TAB}
+
+Die TAB aus Niedersachsen schreibt folgende Grenzwerte auf der Hauptleitung vor: (Hauptleitung = Hausanschlusskasten $ \longrightarrow $ Zähler).
+
+\begin{table}[h]
+
+	\caption{Spannungsfall nach TAB}
+
+	\label{fig:Spannungsfall nach TAB}
+
+	\centering
+
+	\begin{tabular}{|c||c||c|}
+
+		\hline Von & Bis & Spannungsfall \\ 
+
+		\hline\hline  & 100 kVA & 0,5 \% \\ 
+
+		\hline 100 kVA & 250 kVA & 1  \% \\ 
+
+		\hline 250 kVA & 400 kVA & 1,25 \% \\ 
+
+		\hline 400 kVA &  & 1,5 \% \\ 
+
+		\hline 
+
+	\end{tabular}
+
+\end{table}
+
+
+\subsection{VDE 0100 Teil 520}
+
+
+{\color{red}\textbf{Die VDE schreibt einen Grenzwert von 5 \% für andere elektrische Verbraucher und 3\% für Beleuchtung vor.}}
+
+
+Die 5 \% sollten auch über die Verlängerungsleitungen ausgedehnt werden, die an den Steckdosen angeschlossen sind (Empfehlung VDE).
+
+Das heißt: 5 \% vom Hausanschlusskasten bis zum Endverbraucher inklusive seiner Zuleitung.
+
 
 \section{Formelsammlung}
 \label{cha:Formelsammlung}
 
-Es gibt verschiedenen Möglichkeiten, die Leitung, nach dem Spannungsfall, zu verifizieren. Man unterscheidet weiterhin, bei den Formeln, zwischen Wechselstrom und Drehstromverbrauchern. Weiterhin ist der Strom wichtig, welcher in der Berechnung zu verwenden ist. Wir orientieren uns an Kapitel \ref{cha:Welcher Strom wird in der Berechnung verwendet?} und benutzten die dort beschriebenen Ströme.
+Es gibt verschiedenen Möglichkeiten, die Leitung, nach dem Spannungsfall, zu verifizieren. Man unterscheidet weiterhin, bei den Formeln, zwischen Wechselstrom und Drehstromverbrauchern. Weiterhin ist der Strom wichtig, welcher in der Berechnung zu verwenden ist. Wir orientieren uns an Kapitel \ref{cha:Welcher Strom wird in der Berechnung verwendet?} und benutzten die dort beschriebenen Ströme.
 
-\subsection{Formel für Wechselstromverbraucher}
+
+\subsection{Formel für Wechselstromverbraucher}
+
 
 Berechnung des Spannungsfalles in \%:
 
@@ -73,7 +170,8 @@ A = \frac{200 \cdot I \cdot L \cdot \cos\varphi}{K \cdot \Delta u \cdot U}
 	\item $ \Delta u $ = Spannungsfall in \%
 \end{list}
 
-\subsection{Formeln für Drehstromverbraucher}
+\subsection{Formeln für Drehstromverbraucher}
+
 
 Berechnung des Spannungsfalles in \%:
 
@@ -96,25 +194,37 @@ A = \frac{\sqrt{3} \cdot 100 \cdot I \cdot L \cdot \cos\varphi}{K \cdot \Delta u
 	\item $ U $ = Spannung. Hier 400 V!
 	\item $ \Delta u $ = Spannungsfall in \%
 \end{list}
-
-\subsection{Beispiele zur Berechnung des Spannungsfalls}
-\subsubsection{Beispiel für eine Herdzuleitung}
 
-Die Länge der Herdzuleitung beträgt 20 m und sie ist mit einem Leitungsschutzschalter Typ B16 A abgesichert. Es wurden durch andere Berechnungen bereits ein Querschnitt von $ A = 2,5 \,\text{mm}^{2} $ ermittelt. Wir ermitteln nun nach Formel \ref{eq:Drehstrom Spannungsfall Prozent} den auftretenden Spannungsfall:
 
-\[ \Delta u = \frac{\sqrt{3} \cdot 100 \cdot I \cdot L \cdot \cos\varphi}{K \cdot A \cdot U} \]
-\[ = \frac{\sqrt{3} \cdot 100 \cdot 16\,\text{A} \cdot 20\,\text{m} \cdot 1}{56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot\,\Omega} \cdot 2,5 \,\text{mm}^{2} \cdot 400\,\text{V}} = 1\,\text{\%} \]
+\subsection{Beispiele zur Berechnung des Spannungsfalls}
 
-Der Spannungsfall hält alle Grenzwerte nach Kapitel \ref{cha:Grenzwerte und gesetzliche Bestimmungen} ein. Der Querschnitt $ A = 2,5\,\text{mm}^{2} $ wurde verifiziert.
+\subsubsection{Beispiel für eine Herdzuleitung}
 
-\subsubsection{Beispiel für eine Motorzuleitung}
 
-Die Länge der Motorzuleitung beträgt 18 m. Der Motor wird direkt und ohne Steckvorrichtungen angeschlossen. Die Schmelzsicherung ist vom Typ 10 A gL-gG und der Betriebsstrom beträgt I = 4,6 A und der Leistungsfaktor $ \cos\varphi = 0,82 $. Als Zuleitung wurde ein Querschnitt von $ A = 1,5 \,\text{mm}^{2} $ ermittelt. Nach Formel \ref{eq:Drehstrom Spannungsfall Prozent} gilt:
+Die Länge der Herdzuleitung beträgt 20 m und sie ist mit einem Leitungsschutzschalter Typ B16 A abgesichert. Es wurden durch andere Berechnungen bereits ein Querschnitt von $ A = 2,5 \,\text{mm}^{2} $ ermittelt. Wir ermitteln nun nach Formel \ref{eq:Drehstrom Spannungsfall Prozent} den auftretenden Spannungsfall:
 
-\[ \Delta u = \frac{\sqrt{3} \cdot 100 \cdot I \cdot L \cdot \cos\varphi}{K \cdot A \cdot U} \]
-\[ = \frac{\sqrt{3} \cdot 100 \cdot 4,6\,\text{A} \cdot 18\,\text{m}  \cdot 0,82}{56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot\,\Omega} \cdot 1,5 \,\text{mm}^{2} \cdot 400\,\text{V}} = 0,35\,\text{\%} \]
 
-Der Spannungsfall hält alle Grenzwerte nach Kapitel \ref{cha:Grenzwerte und gesetzliche Bestimmungen} ein. Der Querschnitt $ A = 1,5\,\text{mm}^{2} $ wurde verifiziert.
+\[ \Delta u = \frac{\sqrt{3} \cdot 100 \cdot I \cdot L \cdot \cos\varphi}{K \cdot A \cdot U} \]
+
+\[ = \frac{\sqrt{3} \cdot 100 \cdot 16\,\text{A} \cdot 20\,\text{m} \cdot 1}{56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot\,\Omega} \cdot 2,5 \,\text{mm}^{2} \cdot 400\,\text{V}} = 1\,\text{\%} \]
+
+
+Der Spannungsfall hält alle Grenzwerte nach Kapitel \ref{cha:Grenzwerte und gesetzliche Bestimmungen} ein. Der Querschnitt $ A = 2,5\,\text{mm}^{2} $ wurde verifiziert.
+
+
+\subsubsection{Beispiel für eine Motorzuleitung}
+
+
+Die Länge der Motorzuleitung beträgt 18 m. Der Motor wird direkt und ohne Steckvorrichtungen angeschlossen. Die Schmelzsicherung ist vom Typ 10 A gL-gG und der Betriebsstrom beträgt I = 4,6 A und der Leistungsfaktor $ \cos\varphi = 0,82 $. Als Zuleitung wurde ein Querschnitt von $ A = 1,5 \,\text{mm}^{2} $ ermittelt. Nach Formel \ref{eq:Drehstrom Spannungsfall Prozent} gilt:
+
+
+\[ \Delta u = \frac{\sqrt{3} \cdot 100 \cdot I \cdot L \cdot \cos\varphi}{K \cdot A \cdot U} \]
+
+\[ = \frac{\sqrt{3} \cdot 100 \cdot 4,6\,\text{A} \cdot 18\,\text{m}  \cdot 0,82}{56 \cdot \frac{\text{m}}{\text{mm}^{2} \cdot\,\Omega} \cdot 1,5 \,\text{mm}^{2} \cdot 400\,\text{V}} = 0,35\,\text{\%} \]
+
+
+Der Spannungsfall hält alle Grenzwerte nach Kapitel \ref{cha:Grenzwerte und gesetzliche Bestimmungen} ein. Der Querschnitt $ A = 1,5\,\text{mm}^{2} $ wurde verifiziert.
+
 
 \section{Spannungsfall für dein Handy}
 
